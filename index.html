@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jesse d'Almeida — Surgical Robotics Researcher</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #0d1b2a;
+      --navy-mid: #1a2e42;
+      --teal: #00b4a6;
+      --teal-light: #00d4c4;
+      --gold: #e8c56d;
+      --cream: #f5f0e8;
+      --text: #1a1a2e;
+      --muted: #6b7a8d;
+      --border: rgba(0,180,166,0.15);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.2rem 3rem;
+      background: rgba(245,240,232,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.1rem;
+      color: var(--navy);
+      text-decoration: none;
+      letter-spacing: 0.01em;
+    }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      font-size: 0.85rem; font-weight: 500; letter-spacing: 0.06em;
+      text-transform: uppercase; color: var(--muted); text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--teal); }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      padding: 6rem 3rem 3rem;
+      gap: 4rem;
+      background: var(--navy);
+      position: relative;
+      overflow: hidden;
+    }
+    #hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 60% 40%, rgba(0,180,166,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    /* grid lines decoration */
+    #hero::after {
+      content: '';
+      position: absolute; top: 0; right: 0;
+      width: 50%; height: 100%;
+      background-image: 
+        linear-gradient(rgba(0,180,166,0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,180,166,0.06) 1px, transparent 1px);
+      background-size: 48px 48px;
+      pointer-events: none;
+    }
+
+    .hero-text { position: relative; z-index: 2; }
+    .hero-tag {
+      display: inline-block;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--teal); border: 1px solid var(--teal);
+      padding: 0.3em 0.8em; border-radius: 2px;
+      margin-bottom: 1.5rem;
+      animation: fadeUp 0.6s ease both;
+    }
+    .hero-name {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(3rem, 5vw, 5.5rem);
+      line-height: 1.0;
+      color: #fff;
+      margin-bottom: 0.3rem;
+      animation: fadeUp 0.6s 0.1s ease both;
+    }
+    .hero-name em {
+      font-style: italic;
+      color: var(--teal-light);
+    }
+    .hero-subtitle {
+      font-size: 1rem; font-weight: 300; letter-spacing: 0.08em;
+      text-transform: uppercase; color: rgba(255,255,255,0.5);
+      margin-bottom: 2rem;
+      animation: fadeUp 0.6s 0.2s ease both;
+    }
+    .hero-desc {
+      font-size: 1.05rem; line-height: 1.75; color: rgba(255,255,255,0.75);
+      max-width: 480px; margin-bottom: 2.5rem;
+      animation: fadeUp 0.6s 0.3s ease both;
+    }
+    .hero-ctas {
+      display: flex; gap: 1rem; flex-wrap: wrap;
+      animation: fadeUp 0.6s 0.4s ease both;
+    }
+    .btn {
+      display: inline-block; padding: 0.75rem 1.6rem;
+      font-size: 0.85rem; font-weight: 600; letter-spacing: 0.05em;
+      text-decoration: none; border-radius: 3px;
+      transition: all 0.25s;
+    }
+    .btn-primary {
+      background: var(--teal); color: var(--navy);
+    }
+    .btn-primary:hover { background: var(--teal-light); transform: translateY(-1px); }
+    .btn-outline {
+      border: 1px solid rgba(255,255,255,0.3); color: rgba(255,255,255,0.8);
+    }
+    .btn-outline:hover { border-color: var(--teal); color: var(--teal); }
+
+    .hero-photo-wrap {
+      position: relative; z-index: 2;
+      display: flex; justify-content: center; align-items: center;
+      animation: fadeUp 0.7s 0.2s ease both;
+    }
+    .hero-photo-frame {
+      position: relative;
+      width: min(380px, 90%);
+    }
+    .hero-photo-frame::before {
+      content: '';
+      position: absolute; top: 16px; left: 16px; right: -16px; bottom: -16px;
+      border: 2px solid var(--teal);
+      border-radius: 4px;
+      opacity: 0.4;
+    }
+    .hero-photo-frame img {
+      width: 100%; border-radius: 4px;
+      display: block;
+      position: relative; z-index: 1;
+      filter: grayscale(20%) contrast(1.05);
+    }
+    .hero-badge {
+      position: absolute; bottom: -20px; right: -20px; z-index: 2;
+      background: var(--gold); color: var(--navy);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem; font-weight: 500;
+      padding: 0.6rem 0.9rem; border-radius: 3px;
+      line-height: 1.4;
+    }
+
+    /* ── SECTIONS COMMON ── */
+    section { padding: 5rem 3rem; }
+    .section-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--teal); margin-bottom: 0.5rem;
+    }
+    .section-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2rem, 3vw, 3rem);
+      color: var(--navy);
+      margin-bottom: 1rem;
+    }
+    .section-divider {
+      width: 48px; height: 2px;
+      background: var(--teal);
+      margin-bottom: 2.5rem;
+    }
+    .container { max-width: 1100px; margin: 0 auto; }
+
+    /* ── ABOUT ── */
+    #about { background: var(--cream); }
+    .about-grid {
+      display: grid; grid-template-columns: 1.2fr 1fr; gap: 5rem; align-items: start;
+    }
+    .about-text p {
+      font-size: 1.05rem; line-height: 1.85; color: #3a3a4a;
+      margin-bottom: 1.2rem;
+    }
+    .about-stats {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;
+    }
+    .stat-card {
+      background: var(--navy);
+      border-radius: 6px; padding: 1.5rem;
+      border: 1px solid rgba(0,180,166,0.2);
+    }
+    .stat-number {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2.5rem; color: var(--teal);
+    }
+    .stat-label {
+      font-size: 0.8rem; color: rgba(255,255,255,0.55);
+      letter-spacing: 0.05em; margin-top: 0.25rem;
+    }
+    .contact-links {
+      display: flex; flex-direction: column; gap: 0.75rem;
+      margin-top: 2rem;
+    }
+    .contact-link {
+      display: flex; align-items: center; gap: 0.75rem;
+      font-size: 0.9rem; color: var(--muted); text-decoration: none;
+      transition: color 0.2s;
+    }
+    .contact-link:hover { color: var(--teal); }
+    .contact-link svg { flex-shrink: 0; }
+
+    /* ── RESEARCH ── */
+    #research { background: #f0ebe0; }
+    .research-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+    .research-card {
+      background: #fff; border-radius: 6px;
+      padding: 1.8rem; border: 1px solid rgba(0,0,0,0.06);
+      border-top: 3px solid var(--teal);
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+    .research-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,0,0,0.08); }
+    .research-card h3 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.15rem; margin-bottom: 0.6rem; color: var(--navy);
+    }
+    .research-card p { font-size: 0.9rem; color: var(--muted); line-height: 1.7; }
+    .research-tag {
+      display: inline-block; margin-top: 1rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.68rem; letter-spacing: 0.08em;
+      background: rgba(0,180,166,0.1); color: var(--teal);
+      padding: 0.25em 0.6em; border-radius: 2px;
+    }
+
+    /* ── VIDEO ── */
+    #video { background: var(--navy); }
+    #video .section-title { color: #fff; }
+    #video .section-divider { background: var(--gold); }
+    .video-wrap {
+      position: relative; padding-bottom: 56.25%; height: 0;
+      border-radius: 8px; overflow: hidden;
+      border: 1px solid rgba(0,180,166,0.2);
+      box-shadow: 0 24px 64px rgba(0,0,0,0.5);
+      max-width: 860px; margin: 0 auto;
+    }
+    .video-wrap iframe {
+      position: absolute; top: 0; left: 0;
+      width: 100%; height: 100%; border: none;
+    }
+
+    /* ── PUBLICATIONS ── */
+    #publications { background: var(--cream); }
+    .pub-group { margin-bottom: 3rem; }
+    .pub-group-title {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--gold);
+      background: var(--navy-mid);
+      display: inline-block; padding: 0.3em 0.8em; border-radius: 2px;
+      margin-bottom: 1.5rem;
+    }
+    .pub-item {
+      padding: 1.2rem 0;
+      border-bottom: 1px solid rgba(0,0,0,0.07);
+      display: grid; grid-template-columns: auto 1fr;
+      gap: 1rem; align-items: start;
+    }
+    .pub-year {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.78rem; color: var(--teal);
+      padding-top: 0.2rem; min-width: 42px;
+    }
+    .pub-title {
+      font-size: 0.95rem; font-weight: 500; color: var(--navy);
+      margin-bottom: 0.3rem; line-height: 1.5;
+    }
+    .pub-title strong { color: var(--teal); }
+    .pub-venue {
+      font-size: 0.82rem; color: var(--muted); font-style: italic;
+    }
+
+    /* ── HIGHLIGHTS ── */
+    #highlights { background: #f0ebe0; }
+    .highlights-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+    .highlight-card {
+      background: #fff; border-radius: 6px;
+      padding: 1.8rem; border: 1px solid rgba(0,0,0,0.06);
+      display: flex; flex-direction: column; gap: 1rem;
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+    .highlight-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,0,0,0.08); }
+    .highlight-meta {
+      display: flex; align-items: center; gap: 0.6rem;
+    }
+    .highlight-icon {
+      width: 36px; height: 36px; border-radius: 50%;
+      background: var(--navy); display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .highlight-type {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--teal);
+    }
+    .highlight-date {
+      font-size: 0.78rem; color: var(--muted);
+    }
+    .highlight-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.1rem; color: var(--navy); line-height: 1.4;
+    }
+    .highlight-body {
+      font-size: 0.88rem; color: #555; line-height: 1.72;
+    }
+    .highlight-location {
+      display: flex; align-items: center; gap: 0.4rem;
+      font-size: 0.8rem; color: var(--muted);
+      margin-top: auto; padding-top: 0.5rem;
+      border-top: 1px solid rgba(0,0,0,0.06);
+    }
+    .highlight-card.featured {
+      border-top: 3px solid var(--gold);
+      background: linear-gradient(135deg, #fff 80%, rgba(232,197,109,0.05));
+    }
+    .highlight-card.grant {
+      border-top: 3px solid var(--teal);
+    }
+
+    /* ── CV / EDUCATION ── */
+    #cv { background: var(--navy); }
+    #cv .section-title { color: #fff; }
+    #cv .section-label { color: var(--gold); }
+    #cv .section-divider { background: var(--gold); }
+
+    .timeline { position: relative; padding-left: 2rem; }
+    .timeline::before {
+      content: '';
+      position: absolute; left: 0; top: 0; bottom: 0;
+      width: 1px; background: rgba(0,180,166,0.25);
+    }
+    .timeline-item {
+      position: relative; margin-bottom: 2.5rem;
+      animation: fadeUp 0.5s ease both;
+    }
+    .timeline-item::before {
+      content: '';
+      position: absolute; left: -2.4rem; top: 0.4rem;
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--teal); border: 2px solid var(--navy);
+    }
+    .timeline-date {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem; color: var(--teal); margin-bottom: 0.3rem;
+    }
+    .timeline-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.1rem; color: #fff; margin-bottom: 0.1rem;
+    }
+    .timeline-sub {
+      font-size: 0.88rem; color: rgba(255,255,255,0.5); margin-bottom: 0.5rem;
+    }
+    .timeline-desc {
+      font-size: 0.88rem; color: rgba(255,255,255,0.65); line-height: 1.65;
+    }
+
+    .awards-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1rem; margin-top: 2rem;
+    }
+    .award-pill {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(0,180,166,0.15);
+      border-radius: 4px; padding: 1rem 1.2rem;
+    }
+    .award-pill strong {
+      display: block; font-size: 0.88rem; color: var(--gold); margin-bottom: 0.2rem;
+    }
+    .award-pill span { font-size: 0.8rem; color: rgba(255,255,255,0.5); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #080f18;
+      padding: 2.5rem 3rem;
+      text-align: center;
+      border-top: 1px solid rgba(0,180,166,0.1);
+    }
+    footer p { font-size: 0.82rem; color: rgba(255,255,255,0.25); }
+    footer a { color: var(--teal); text-decoration: none; }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      #hero { grid-template-columns: 1fr; padding: 5rem 1.5rem 3rem; gap: 2rem; }
+      .hero-photo-wrap { order: -1; }
+      .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+      section { padding: 3.5rem 1.5rem; }
+      footer { padding: 2rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a class="nav-logo" href="#hero">Jesse d'Almeida</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#video">Video</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#highlights">Highlights</a></li>
+      <li><a href="#cv">CV</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-text">
+      <div class="hero-tag">PhD Researcher · Surgical Robotics</div>
+      <h1 class="hero-name">Jesse<br/><em>d'Almeida</em></h1>
+      <p class="hero-subtitle">Vanderbilt University · MEDLab</p>
+      <p class="hero-desc">
+        Building robots that help surgeons heal. I develop minimally invasive 
+        continuum robotic systems for surgical applications — from transendoscopic 
+        suturing to fibroid removal — bridging mechanical design, kinematics, and 
+        clinical need.
+      </p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="https://scholar.google.com/citations?user=JFn_cXYAAAAJ&hl=en" target="_blank">Google Scholar</a>
+        <a class="btn btn-outline" href="https://www.medicalengineeringlab.com" target="_blank">MEDLab</a>
+        <a class="btn btn-outline" href="https://www.linkedin.com/in/jesse-dalmeida" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+    <div class="hero-photo-wrap">
+      <div class="hero-photo-frame">
+        <img src="IMG_7309_copy.jpg" alt="Jesse d'Almeida" />
+        <div class="hero-badge">NSF Graduate<br/>Research Fellow</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+      <p class="section-label">Background</p>
+      <h2 class="section-title">About Me</h2>
+      <div class="section-divider"></div>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+            I'm a PhD student in Mechanical Engineering at Vanderbilt University, where I work in the 
+            <a href="https://www.medicalengineeringlab.com" target="_blank" style="color:var(--teal)">Medical Engineering and Discovery Lab (MEDLab)</a> 
+            under Dr. Robert J. Webster III. My research focuses on continuum and concentric tube robots 
+            for minimally invasive surgery — systems that can navigate the body's natural pathways to 
+            reach places traditional tools cannot.
+          </p>
+          <p>
+            I completed my MS and BS in Robotics Engineering at Worcester Polytechnic Institute (WPI), 
+            where I worked with Dr. Loris Fichera on accessible concentric tube robot designs and 
+            steerable laser fibers for office-based laryngeal surgery.
+          </p>
+          <p>
+            I'm passionate about the full arc from blue-sky research to clinical impact. My work spans 
+            robot design and fabrication, kinematic modeling, surgical workflow integration, and 
+            collaboration directly with surgeons on phantom and tissue experiments.
+          </p>
+          <div class="contact-links">
+            <a class="contact-link" href="/cdn-cgi/l/email-protection#93f9f6e0e0f6bdf5bdf7f2fffef6faf7f2d3e5f2fdf7f6e1f1faffe7bdf6f7e6">
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+              <span class="__cf_email__" data-cfemail="9ff5faececfab1f9b1fbfef3f2faf6fbfedfe9fef1fbfaedfdf6f3ebb1fafbea">[email&#160;protected]</span>
+            </a>
+            <a class="contact-link" href="https://www.linkedin.com/in/jesse-dalmeida" target="_blank">
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+              linkedin.com/in/jesse-dalmeida
+            </a>
+            <a class="contact-link" href="https://scholar.google.com/citations?user=JFn_cXYAAAAJ&hl=en" target="_blank">
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+              Google Scholar
+            </a>
+          </div>
+        </div>
+        <div class="about-stats">
+          <div class="stat-card">
+            <div class="stat-number">15+</div>
+            <div class="stat-label">Publications &amp; Proceedings</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">$12M</div>
+            <div class="stat-label">ARPA-H Grant Co-authored</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">3</div>
+            <div class="stat-label">Degrees in Robotics &amp; ME</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">4+</div>
+            <div class="stat-label">Years at Vanderbilt MEDLab</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESEARCH -->
+  <section id="research">
+    <div class="container">
+      <p class="section-label">Projects</p>
+      <h2 class="section-title">Research Focus</h2>
+      <div class="section-divider"></div>
+      <div class="research-grid">
+        <div class="research-card">
+          <h3>Transendoscopic Robotic Suturing</h3>
+          <p>Developing a dual-arm handheld concentric tube robot system for Natural Orifice Transluminal Endoscopic Surgery (NOTES), enabling suturing in highly confined anatomical spaces without external incisions.</p>
+          <span class="research-tag">Lead Project · 2021–Present</span>
+        </div>
+        <div class="research-card">
+          <h3>ALISS: Autonomous Surgical Assistance</h3>
+          <p>Collaborating on automation methods for suturing and hemostasis in minimally invasive surgery. Co-authored the proposal for an ARPA-H award of up to $12M for this multi-institutional effort.</p>
+          <span class="research-tag">Vanderbilt MEDLab · 2024–Present</span>
+        </div>
+        <div class="research-card">
+          <h3>Intrauterine Fibroid Removal Robot</h3>
+          <p>Leading a research team developing a continuum robot for resecting fibroids inside the uterus. Modeling concentric tube robot kinematics at their superelastic limit to enable high-curvature robotic arms.</p>
+          <span class="research-tag">Principal Investigator · 2024–Present</span>
+        </div>
+        <div class="research-card">
+          <h3>Open-Source 3D-Printed CTR</h3>
+          <p>MS thesis work creating an accessible concentric tube robot from 3D-printed and off-the-shelf materials, enabling broader educational and research adoption without expensive custom fabrication.</p>
+          <span class="research-tag">WPI MS Thesis · 2020–2021</span>
+        </div>
+        <div class="research-card">
+          <h3>Steerable Laser Fibers for Laryngology</h3>
+          <p>Developed simulation platforms and end-effector designs to steer a laser fiber through an endoscope into the larynx for office-based treatment of pre-malignant vocal fold tumors. Awarded Best Student Paper at SPIE 2021.</p>
+          <span class="research-tag">WPI Capstone + Research · 2019–2021</span>
+        </div>
+        <div class="research-card">
+          <h3>MRI-Guided Focal Prostate Resection</h3>
+          <p>Contributing to a feasibility study for low-field MRI-guided transurethral robotic focal prostate resection, bridging imaging and robotic intervention for precision oncology.</p>
+          <span class="research-tag">Collaborative · 2022–Present</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIDEO -->
+  <section id="video">
+    <div class="container">
+      <p class="section-label">Watch</p>
+      <h2 class="section-title">Research in Action</h2>
+      <div class="section-divider"></div>
+      <div class="video-wrap">
+        <iframe
+          src="https://www.youtube.com/embed/iJAR9Tz76pc"
+          title="Jesse d'Almeida Research Video"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- PUBLICATIONS -->
+  <section id="publications">
+    <div class="container">
+      <p class="section-label">Scholarship</p>
+      <h2 class="section-title">Selected Publications</h2>
+      <div class="section-divider"></div>
+
+      <div class="pub-group">
+        <div class="pub-group-title">In Progress / Under Review</div>
+
+        <div class="pub-item">
+          <span class="pub-year">—</span>
+          <div>
+            <div class="pub-title"><strong>d'Almeida JF</strong>, Shrand JA, et al. "Transendoscopic Suturing for Radical Prostatectomy using Concentric Tube Robots"</div>
+            <div class="pub-venue">Transactions on Robotics (TRO) — In Preparation</div>
+          </div>
+        </div>
+
+        <div class="pub-item">
+          <span class="pub-year">—</span>
+          <div>
+            <div class="pub-title">Acar A, Smith M, …, <strong>d'Almeida JF</strong>, et al. "From Monocular Vision to Autonomous Action: Guiding Tumor Resection via 3D Reconstruction"</div>
+            <div class="pub-venue">IROS 2025 — Under Review</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pub-group">
+        <div class="pub-group-title">Accepted / In Press 2025</div>
+
+        <div class="pub-item">
+          <span class="pub-year">2025</span>
+          <div>
+            <div class="pub-title">Wilke E, <strong>d'Almeida JF</strong>, Zamora IJ, Lovvorn HN, Webster RJ. "A Needlescopic Robot to Enable Closed-Chest Congenital Tracheal-Esophageal Defect Repair"</div>
+            <div class="pub-venue">Hamlyn Symposium on Medical Robotics — In Press</div>
+          </div>
+        </div>
+
+        <div class="pub-item">
+          <span class="pub-year">2025</span>
+          <div>
+            <div class="pub-title">Wilke E, Purdue SE, <strong>d'Almeida JF</strong>, et al. "Working Sideways with Concentric Tube Robots: A System for Natural Orifice Intrauterine Surgeries"</div>
+            <div class="pub-venue">ISMR 2025 — In Press</div>
+          </div>
+        </div>
+
+        <div class="pub-item">
+          <span class="pub-year">2025</span>
+          <div>
+            <div class="pub-title"><strong>d'Almeida JF</strong>, Shrand JA, et al. "Toward Low-Field MRI Guided Transurethral Robotic Focal Prostate Resection: A Feasibility Study Using High-Field Images"</div>
+            <div class="pub-venue">ISMR 2025 — In Press</div>
+          </div>
+        </div>
+
+        <div class="pub-item">
+          <span class="pub-year">2025</span>
+          <div>
+            <div class="pub-title">Li H, Wang J, …, <strong>d'Almeida JF</strong>, et al. "Automated segmentation of central airway obstruction from endoscopic video stream with deep learning"</div>
+            <div class="pub-venue">SPIE Medical Imaging 2025</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pub-group">
+        <div class="pub-group-title">Published</div>
+
+        <div class="pub-item">
+          <span class="pub-year">2024</span>
+          <div>
+            <div class="pub-title">Shrand J, <strong>d'Almeida JF</strong>, et al. "Enhancing Accuracy in Transendoscopic Concentric Tube Robots for Monocular Endoscope Guidance"</div>
+            <div class="pub-venue">ISMR 2024, IEEE</div>
+          </div>
+        </div>
+
+        <div class="pub-item">
+          <span class="pub-year">2024</span>
+          <div>
+            <div class="pub-title">Wilke E, <strong>d'Almeida JF</strong>, et al. "A Comparison of Onboard and Offboard User Interfaces for Handheld Robots"</div>
+            <div class="pub-venue">SPIE Medical Imaging 2024, vol. 12928</div>
+          </div>
+        </div>
+
+        <div class="pub-item">
+          <span class="pub-year">2023</span>
+          <div>
+            <div class="pub-title">Shrand JA, <strong>d'Almeida JF</strong>, et al. "A Virtual Reality Framework for Evaluating Concentric Tube Surgical Robot Designs"</div>
+            <div class="pub-venue">SPIE Medical Imaging 2023</div>
+          </div>
+        </div>
+
+        <div class="pub-item">
+          <span class="pub-year">2022</span>
+          <div>
+            <div class="pub-title"><strong>d'Almeida JF</strong>, Rox M, Webster RJ. "Toward Bipolar Electrosurgery with Concentric Tube Robots"</div>
+            <div class="pub-venue">Hamlyn Symposium on Medical Robotics 2022</div>
+          </div>
+        </div>
+
+        <div class="pub-item">
+          <span class="pub-year">2022</span>
+          <div>
+            <div class="pub-title">Ertop TE, <strong>d'Almeida JF</strong>, et al. "Towards Suturing From Within the Urethra Using Concentric Tube Robots: First Experiences in Biological Tissues"</div>
+            <div class="pub-venue">ISMR 2022, IEEE</div>
+          </div>
+        </div>
+
+        <div class="pub-item">
+          <span class="pub-year">2021</span>
+          <div>
+            <div class="pub-title">Chan I*, <strong>d'Almeida JF*</strong>, et al. "On the merits of using angled fiber tips in office-based laser surgery of the vocal folds" <em>(co-first author · Best Student Paper)</em></div>
+            <div class="pub-venue">SPIE Medical Imaging 2021</div>
+          </div>
+        </div>
+      </div>
+
+      <p style="font-size:0.85rem; color:var(--muted); margin-top:1rem;">
+        Full list on <a href="https://scholar.google.com/citations?user=JFn_cXYAAAAJ&hl=en" target="_blank" style="color:var(--teal)">Google Scholar →</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- HIGHLIGHTS -->
+  <section id="highlights">
+    <div class="container">
+      <p class="section-label">News &amp; Activities</p>
+      <h2 class="section-title">Highlights</h2>
+      <div class="section-divider"></div>
+      <div class="highlights-grid">
+
+        <!-- Keynote Talk -->
+        <div class="highlight-card featured">
+          <div class="highlight-meta">
+            <div class="highlight-icon">
+              <svg width="16" height="16" fill="none" stroke="var(--teal)" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <div>
+              <div class="highlight-type">Keynote Talk</div>
+              <div class="highlight-date">2024</div>
+            </div>
+          </div>
+          <div class="highlight-title">Discovering Surgical Robotics: From First Steps to Breakthroughs</div>
+          <div class="highlight-body">
+            Invited keynote speaker at the <em>TransformA Congress for Biomedical Engineering Students</em> at Universidad Anáhuac Mayab in Mérida, Mexico. Presented Vanderbilt MEDLab's work in surgical robotics and shared what research looks like across career stages — inspiring the next generation of biomedical engineers.
+          </div>
+          <div class="highlight-location">
+            <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Mérida, Mexico · Universidad Anáhuac Mayab
+          </div>
+        </div>
+
+        <!-- ARPA-H Grant -->
+        <div class="highlight-card grant">
+          <div class="highlight-meta">
+            <div class="highlight-icon">
+              <svg width="16" height="16" fill="none" stroke="var(--teal)" stroke-width="2" viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            </div>
+            <div>
+              <div class="highlight-type">Grant Award</div>
+              <div class="highlight-date">2024</div>
+            </div>
+          </div>
+          <div class="highlight-title">ARPA-H Award: Autonomy at a Less Invasive Scale (ALISS)</div>
+          <div class="highlight-body">
+            Co-authored the initial proposal for a landmark multi-institutional surgical autonomy project led by Dr. Robert Webster III. The project — focused on automating suturing and hemostasis in minimally invasive surgery — was successfully awarded up to <strong>$12 million</strong> from the Advanced Research Projects Agency for Health (ARPA-H).
+          </div>
+          <div class="highlight-location">
+            <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Vanderbilt University · MEDLab
+          </div>
+        </div>
+
+        <!-- NSF Fellowship -->
+        <div class="highlight-card">
+          <div class="highlight-meta">
+            <div class="highlight-icon">
+              <svg width="16" height="16" fill="none" stroke="var(--teal)" stroke-width="2" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <div>
+              <div class="highlight-type">Fellowship</div>
+              <div class="highlight-date">2022 – Present</div>
+            </div>
+          </div>
+          <div class="highlight-title">NSF Graduate Research Fellowship</div>
+          <div class="highlight-body">
+            Recipient of the National Science Foundation Graduate Research Fellowship Program (NSF GRFP), one of the most prestigious graduate fellowships in the US, awarded in recognition of outstanding research potential in surgical robotics and medical engineering.
+          </div>
+          <div class="highlight-location">
+            <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            National Science Foundation
+          </div>
+        </div>
+
+        <!-- Best Student Paper -->
+        <div class="highlight-card">
+          <div class="highlight-meta">
+            <div class="highlight-icon">
+              <svg width="16" height="16" fill="none" stroke="var(--teal)" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
+            </div>
+            <div>
+              <div class="highlight-type">Award</div>
+              <div class="highlight-date">2021</div>
+            </div>
+          </div>
+          <div class="highlight-title">Best Student Paper — SPIE Medical Imaging 2021</div>
+          <div class="highlight-body">
+            Awarded Best Student Paper (co-first author) for work on angled laser fiber tips in office-based vocal fold surgery, presented at the SPIE Medical Imaging Conference. The paper introduced steerable laser fibers into laryngoscopic procedures as a step toward minimally invasive treatment of pre-malignant tumors.
+          </div>
+          <div class="highlight-location">
+            <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            SPIE Medical Imaging Conference
+          </div>
+        </div>
+
+        <!-- Hamlyn 2025 -->
+        <div class="highlight-card">
+          <div class="highlight-meta">
+            <div class="highlight-icon">
+              <svg width="16" height="16" fill="none" stroke="var(--teal)" stroke-width="2" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            </div>
+            <div>
+              <div class="highlight-type">Paper Accepted</div>
+              <div class="highlight-date">2025</div>
+            </div>
+          </div>
+          <div class="highlight-title">Needlescopic Robot for Pediatric Esophageal Repair · Hamlyn 2025</div>
+          <div class="highlight-body">
+            Paper accepted at the Hamlyn Symposium on Medical Robotics presenting a needlescopic robot designed to enable minimally invasive closed-chest repair of congenital tracheal-esophageal defects — a first-of-its-kind robotic approach to this pediatric surgical challenge.
+          </div>
+          <div class="highlight-location">
+            <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Hamlyn Symposium on Medical Robotics · 2025
+          </div>
+        </div>
+
+        <!-- Languages / outreach note -->
+        <div class="highlight-card">
+          <div class="highlight-meta">
+            <div class="highlight-icon">
+              <svg width="16" height="16" fill="none" stroke="var(--teal)" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            </div>
+            <div>
+              <div class="highlight-type">Outreach</div>
+              <div class="highlight-date">Ongoing</div>
+            </div>
+          </div>
+          <div class="highlight-title">Multilingual Science Communication</div>
+          <div class="highlight-body">
+            A native English and advanced Portuguese speaker with intermediate Spanish, Jesse actively engages international audiences in science outreach — including presenting in Spanish at conferences in Latin America to broaden the reach of surgical robotics research beyond English-speaking institutions.
+          </div>
+          <div class="highlight-location">
+            <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            English · Portuguese · Spanish
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CV / EDUCATION -->
+  <section id="cv">
+    <div class="container">
+      <p class="section-label">Background</p>
+      <h2 class="section-title">Education &amp; Awards</h2>
+      <div class="section-divider"></div>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:4rem; margin-bottom:3rem;" class="cv-grid">
+        <div>
+          <p style="font-size:0.78rem; letter-spacing:0.1em; text-transform:uppercase; color:rgba(255,255,255,0.35); margin-bottom:1.5rem;">Education</p>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-date">2021 – Present</div>
+              <div class="timeline-title">PhD, Mechanical Engineering</div>
+              <div class="timeline-sub">Vanderbilt University, Nashville TN</div>
+              <div class="timeline-desc">Advisor: Dr. Robert J. Webster III · MEDLab · NSF GRFP Fellow</div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-date">2020 – 2021</div>
+              <div class="timeline-title">MS, Robotics Engineering</div>
+              <div class="timeline-sub">Worcester Polytechnic Institute</div>
+              <div class="timeline-desc">Thesis: Open-source 3D-printed concentric tube robot design</div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-date">2016 – 2020</div>
+              <div class="timeline-title">BS, Robotics Engineering</div>
+              <div class="timeline-sub">Worcester Polytechnic Institute</div>
+              <div class="timeline-desc">Minor in Mechanical Engineering · Rho Beta Epsilon Honor Society · Outstanding Senior</div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <p style="font-size:0.78rem; letter-spacing:0.1em; text-transform:uppercase; color:rgba(255,255,255,0.35); margin-bottom:1.5rem;">Experience</p>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-date">2022 – Present</div>
+              <div class="timeline-title">Graduate Research Assistant</div>
+              <div class="timeline-sub">Vanderbilt MEDLab</div>
+              <div class="timeline-desc">Lead researcher on transendoscopic suturing and intrauterine robotics</div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-date">Summer 2019</div>
+              <div class="timeline-title">Innovation &amp; Technology Intern</div>
+              <div class="timeline-sub">MITRE Corporation, Bedford MA</div>
+              <div class="timeline-desc">ROS/SLAM autonomous delivery robot; selected to present company-wide</div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-date">2017 – 2018</div>
+              <div class="timeline-title">Repair Engineer</div>
+              <div class="timeline-sub">SoftBank Robotics, Boston MA</div>
+              <div class="timeline-desc">Serviced Nao and Pepper humanoid robots for enterprise clients</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p style="font-size:0.78rem; letter-spacing:0.1em; text-transform:uppercase; color:rgba(255,255,255,0.35); margin-bottom:1.2rem;">Honors &amp; Awards</p>
+      <div class="awards-grid">
+        <div class="award-pill">
+          <strong>NSF Graduate Research Fellowship</strong>
+          <span>2022 – Present</span>
+        </div>
+        <div class="award-pill">
+          <strong>Russell G. Hamilton Scholar</strong>
+          <span>Vanderbilt University · 2021</span>
+        </div>
+        <div class="award-pill">
+          <strong>Best Student Paper Award</strong>
+          <span>SPIE Medical Imaging 2021</span>
+        </div>
+        <div class="award-pill">
+          <strong>Dean's Graduate Fellowship</strong>
+          <span>Vanderbilt University · 2021</span>
+        </div>
+        <div class="award-pill">
+          <strong>Outstanding Senior</strong>
+          <span>WPI Robotics Engineering · 2020</span>
+        </div>
+        <div class="award-pill">
+          <strong>Provost's MQP Award Runners Up</strong>
+          <span>WPI · 2020</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>Jesse Francisco d'Almeida · PhD Researcher · Vanderbilt MEDLab · <a href="/cdn-cgi/l/email-protection#97fdf2e4e4f2b9f1b9f3f6fbfaf2fef3f6d7e1f6f9f3f2e5f5fefbe3b9f2f3e2"><span class="__cf_email__" data-cfemail="016b647272642f672f65606d6c646865604177606f65647363686d752f646574">[email&#160;protected]</span></a></p>
+    <p styl
