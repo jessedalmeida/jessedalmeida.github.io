@@ -1,0 +1,291 @@
+# ═══════════════════════════════════════════════════════════════
+#  PUBLICATIONS  —  publications.yml
+#
+#  HOW TO ADD A NEW PAPER — copy this template:
+#
+# - key: dalmeida2025example       # unique, no spaces
+#   year: "2025"
+#   type: conference               # journal | conference | abstract | patent
+#   title: "Paper Title"
+#   authors: "**d'Almeida JF**, Coauthor A"
+#   venue: "ISMR 2025"
+#   doi: "https://doi.org/10.xxxx"  # optional
+#   link_url: "https://publisher-site/paper"   # optional publication page
+#   pdf: "assets/papers/your-paper.pdf"        # optional local PDF or external URL
+#   featured: true                               # optional: show in Featured Publications section
+#   featured_blurb: >                            # optional short blurb for featured card
+#     One or two lines of why this paper matters.
+#   featured_media_type: image                   # optional: image | video
+#   featured_media_url: "assets/images/fig.jpg" # optional image path, embed URL, or uploaded video path
+#                                               # uploaded video example: assets/videos/mypaper-demo.mp4
+#                                               # embed example: https://www.youtube.com/embed/VIDEO_ID
+#   note: "★ Best Paper"            # optional
+#   abstract: >                     # optional — enables expandable card
+#     Abstract text here.
+#   figure: "filename.jpg"          # optional — drop in assets/images/
+# ═══════════════════════════════════════════════════════════════
+# ═══════════════════════════════════════════════════════════════
+#  PUBLICATIONS  —  publications.yml
+# ═══════════════════════════════════════════════════════════════
+
+# ── JOURNAL PAPERS ────────────────────────────────────────────
+# - key: dalmeida_ral_pinpoint_2026
+#   year: "2026"
+#   type: journal
+#   title: "PinPoint: Monocular Needle Pose Estimation for Robotic Suturing via Stein Variational Newton and Geometric Residuals"
+#   authors: "**J. F. d'Almeida**, T. Watts, S. S. Stern, J. Ferguson, A. Kuntz, R. J. Webster III"
+#   venue: "IEEE Robotics and Automation Letters (RA-L)"
+#   doi: ""
+  # No preprint found yet — add when available
+
+- key: dalmeida_jmrr_2025
+  year: "2025"
+  type: journal
+  title: "Toward Image-Guided, Robot-Assisted Focal Prostate Resection: Do Enhanced Dexterity and Visualization Improve Performance?"
+  authors: "**J. F. d'Almeida**, J. A. Shrand, S. Garrow, C. E. Vaughn, N. L. Kavoussi, S. Setia, A. Reed, S. S. Stern, T. E. Ertop, A. E. Ghazi, S. D. Herrell, W. A. Grissom, and R. J. Webster III"
+  venue: "Journal of Medical Robotics Research (JMRR)"
+  doi: "https://pmc.ncbi.nlm.nih.gov/articles/PMC12889886/"
+  pdf: "assets/papers/2025_JMRR_MRI_Robotic_Focal_Prostate_Resection.pdf"
+  # Full DOI not yet indexed; PMC link works
+
+- key: dalmeida_jendo_2025
+  year: "2025"
+  type: journal
+  title: "Robotic Transurethral Vesicourethral Anastomosis after Radical Prostatectomy in Validated Models"
+  authors: "**J. F. d'Almeida**, K. Maciolek, E. Wilke, J. Shrand, L. Shepard, T. E. Ertop, A. E. Ghazi, R. J. Webster III, S. D. Herrell III, N. L. Kavoussi"
+  venue: "Journal of Endourology (JEndo)"
+  doi: ""
+  pdf: "assets/papers/2025_JEndo_Transurethral_Anastomosis.pdf"
+  # Not yet indexed — add DOI when available
+  featured: true
+  featured_blurb: >
+    Techniques that minimize dissection of neurovascular structures during radical prostatectomy
+    improve perioperative outcomes and functional recovery. We sought to address this with a
+    concentric tube robot (CTR) system designed specifically for performing a transurethral
+    vesicourethral anastomosis after transurethral prostatectomy, in a series of validated phantoms.
+  featured_media_type: image
+  featured_media_url: "assets/images/dalmeida_jendo2025_figure.png"
+
+# ── CONFERENCE PAPERS ─────────────────────────────────────────
+
+- key: dalmeida_iros2026_needle
+  year: "2026"
+  type: conference
+  title: "Uncertainty-Aware Needle Handoff for Autonomous Endoscopic Suturing with Concentric Tube Robots"
+  authors: "**J. F. d'Almeida**, S. S. Stern, A. Kuntz, R. J. Webster III"
+  venue: "IROS 2026"
+  doi: ""
+  # Under review — add when accepted/published
+
+- key: minor_hamlyn2026_threading
+  year: "2026"
+  type: conference
+  title: "Threading the Robot: Trans-Concentric-Tube-Robot Delivery of Flexible Suturing Needles"
+  authors: "B. Minor, **J. F. d'Almeida**, S. S. Stern, and R. J. Webster III"
+  venue: "Hamlyn 2026"
+  doi: ""
+
+- key: dalmeida_ismr2026_suturing
+  year: "2026"
+  type: conference
+  title: "Needle-and-Thread Suturing With Concentric Tube Robots for Tracheal Stent Fixation"
+  authors: "**J. F. d'Almeida**, L. Branscombe, A. O. Chara, S. Stern, F. Maldonado, A. Kuntz, and R. J. Webster III"
+  venue: "ISMR 2026"
+  doi: ""
+  pdf: "assets/papers/2026_ISMR_ALISS_Teleop_Stent_Fixation_Final_Revised.pdf"
+  featured: true
+  featured_blurb: >
+    We present a teleoperated suturing system for tracheal stent fixation using concentric tube robots, demonstrating precise needle control and secure fixation in a validated airway phantom.
+  featured_media_type: video
+  featured_media_url: "assets/videos/dalmeida_ismr2026_demo.mp4"
+
+- key: watts_ismr2026_pushcvae
+  year: "2026"
+  type: conference
+  title: "PushCVAE: Generative Autonomous Nonprehensile Surgical Retraction from Monocular Endoscopic Images"
+  authors: "T. Watts, S. S. Stern, A. O. Chara, **J. F. d'Almeida**, A. Kuntz"
+  venue: "ISMR 2026"
+  doi: ""
+
+- key: smith_ismr2026_resection
+  year: "2026"
+  type: conference
+  title: "A Supervised Autonomous Resection and Retraction Framework for Transurethral Enucleation of the Prostatic Median Lobe"
+  authors: "M. Smith, T. Watts, S. Stern, B. Burkhart, H. Li, A. O. Chara, N. Kumar, J. Ferguson, A. Acar, **J. F. d'Almeida**, L. Branscombe, L. Shepard, A. Ghazi, I. Oguz, J. Y. Wu, R. J. Webster III, A. Krieger, and A. Kuntz"
+  venue: "ISMR 2026"
+  doi: ""
+
+- key: jordan_icra2026_probemde
+  year: "2026"
+  type: conference
+  title: "ProbeMDE: Uncertainty Guided Active Proprioception for Monocular Depth Estimation in Surgical Robotics"
+  authors: "B. Jordan, J. Thompson, **J. F. d'Almeida**, H. Li, N. Kumar, S. S. Stern, I. Oguz, R. J. Webster III, D. Brown, A. Kuntz, J. Ferguson"
+  venue: "ICRA 2026"
+  doi: ""
+
+- key: isik_spie2026_benchmark
+  year: "2026"
+  type: conference
+  title: "A benchmark study of methods for surgical instrument segmentation in central airway endoscopy"
+  authors: "D. Isik, K. J. Oguine, **J. F. d'Almeida**, R. J. Webster III, I. Oguz, H. Li"
+  venue: "SPIE Medical Imaging 2026"
+  doi: ""
+  # Not yet indexed — add DOI when proceedings are posted
+
+- key: li_spie2026_depth
+  year: "2026"
+  type: conference
+  title: "Monocular absolute depth estimation from endoscopy via domain-invariant feature learning and latent consistency"
+  authors: "H. Li, D. Lu, **J. F. d'Almeida**, D. Isik, E. K. Aghdam, N. DiSanto, A. Acar, S. Stern, J. Y. Wu, R. J. Webster III, I. Oguz"
+  venue: "SPIE Medical Imaging 2026"
+  doi: "https://arxiv.org/abs/2511.02247"
+  # Preprint available; update to official SPIE DOI when proceedings are posted
+
+- key: oguine_spie2026_labeling
+  year: "2026"
+  type: conference
+  title: "Efficient Labeling: Is Prompt-Based Annotation a Viable Alternative to Manual Labeling in Endoscopy Video Segmentation?"
+  authors: "K. J. Oguine, H. Li, D. Isik, A. Acar, **J. F. d'Almeida**, S. Stern, L. Branscombe, J. Petrin, R. J. Webster III, I. Oguz"
+  venue: "SPIE Medical Imaging 2026"
+  doi: ""
+
+- key: acar_iros2025_tumor
+  year: "2025"
+  type: conference
+  title: "From Monocular Vision to Autonomous Action: Guiding Tumor Resection via 3D Reconstruction"
+  authors: "A. Acar, M. Smith, L. Al-Zogbi, T. Watts, F. Li, H. Li, N. Yilmaz, P. M. Scheikl, **J. F. d'Almeida**, S. Sharma, L. Branscombe, T. E. Ertop, R. J. Webster III, I. Oguz, A. Kuntz, A. Krieger, J. Y. Wu"
+  venue: "IROS 2025"
+  doi: "https://ieeexplore.ieee.org/document/11246413/"
+  # Preprint: https://arxiv.org/abs/2503.16263
+
+- key: wilke_hamlyn2025_needlescopic
+  year: "2025"
+  type: conference
+  title: "A Needlescopic Robot to Enable Closed-Chest Congenital Tracheal-Esophageal Defect Repair"
+  authors: "E. Wilke, **J. F. d'Almeida**, I. J. Zamora, H. N. Lovvorn, and R. J. Webster III"
+  venue: "Hamlyn Symposium on Medical Robotics 2025"
+  doi: ""
+  # Not publicly indexed — add if proceedings are posted
+
+- key: wilke_ismr2025_uterine
+  year: "2025"
+  type: conference
+  title: "Working Sideways with Concentric Tube Robots: A System for Natural Orifice Intrauterine Surgeries"
+  authors: "E. Wilke, S. E. Purdue, **J. F. d'Almeida**, L. Harvey, S. D. Herrell, and R. J. Webster III"
+  venue: "ISMR 2025"
+  doi: "https://ieeexplore.ieee.org/document/11025972/"
+
+- key: dalmeida_ismr2025_prostate
+  year: "2025"
+  type: conference
+  title: "Toward Low-Field MRI Guided Transurethral Robotic Focal Prostate Resection: A Feasibility Study Using High-Field Images"
+  authors: "**J. F. d'Almeida**, J. A. Shrand, S. Garrow, C. E. Vaughn, N. L. Kavoussi, S. Setia, A. Reed, A. E. Ghazi, S. D. Herrell III, and R. J. Webster III"
+  venue: "ISMR 2025"
+  doi: "https://ieeexplore.ieee.org/document/11025965/"
+
+- key: li_spie2025_airway
+  year: "2025"
+  type: conference
+  title: "Automated segmentation of central airway obstruction from endoscopic video stream with deep learning"
+  authors: "H. Li, J. Wang, N. Kumar, **J. F. d'Almeida**, D. Lu, A. Acar, J. Han, Q. Yang, T. E. Ertop, J. Y. Wu, R. J. Webster III, I. Oguz"
+  venue: "SPIE Medical Imaging 2025"
+  doi: "https://doi.org/10.1117/12.3047413"
+
+- key: shrand_ismr2024
+  year: "2024"
+  type: conference
+  title: "Enhancing Accuracy in Transendoscopic Concentric Tube Robots for Monocular Endoscope Guidance"
+  authors: "J. Shrand, **J. F. d'Almeida**, E. Wilke, A. Reed, N. L. Kavoussi, S. D. Herrell III, T. E. Ertop, and R. J. Webster III"
+  venue: "ISMR 2024, IEEE, pp. 1–3"
+  doi: "https://ieeexplore.ieee.org/document/10586084/"
+
+- key: wilke_spie2024
+  year: "2024"
+  type: conference
+  title: "A Comparison of Onboard and Offboard User Interfaces for Handheld Robots"
+  authors: "E. Wilke, **J. F. d'Almeida**, J. A. Shrand, T. E. Ertop, N. L. Kavoussi, A. Reed, S. D. Herrell III, and R. J. Webster III"
+  venue: "SPIE Medical Imaging 2024, vol. 12928, pp. 533–537"
+  doi: "https://doi.org/10.1117/12.3008773"
+
+- key: shrand_spie2023
+  year: "2023"
+  type: conference
+  title: "A Virtual Reality Framework for Evaluating Concentric Tube Surgical Robot Designs"
+  authors: "J. A. Shrand, **J. F. d'Almeida**, T. E. Ertop, N. L. Kavoussi, S. A. Setia, S. D. Herrell III, and R. J. Webster III"
+  venue: "SPIE Medical Imaging 2023"
+  doi: "https://doi.org/10.1117/12.2655803"
+
+- key: picho_hamlyn2022
+  year: "2022"
+  type: conference
+  title: "Multi Jet Fusion of Nylon-12: A Viable Method to 3D-print Concentric Tube Robots?"
+  authors: "K. Picho, B. Persons, **J. F. d'Almeida**, N. Pacheco, C. Reynolds, L. Fichera"
+  venue: "Hamlyn Symposium 2022"
+  doi: "https://arxiv.org/abs/2204.00505"
+  # Preprint available; no official Hamlyn proceedings DOI found
+
+- key: dalmeida_hamlyn2022
+  year: "2022"
+  type: conference
+  title: "Toward Bipolar Electrosurgery with Concentric Tube Robots"
+  authors: "**J. F. d'Almeida**, M. Rox, and R. J. Webster III"
+  venue: "Hamlyn Symposium on Medical Robotics 2022"
+  doi: ""
+  # No public link found — add if posted to MEDLab site or arXiv
+
+- key: ertop_ismr2022
+  year: "2022"
+  type: conference
+  title: "Towards Suturing From Within the Urethra Using Concentric Tube Robots: First Experiences in Biological Tissues"
+  authors: "T. E. Ertop, **J. F. d'Almeida**, E. Amanov, J. Shrand, N. Nimmagadda, S. Setia, N. L. Kavoussi, S. D. Herrell III, and R. J. Webster III"
+  venue: "ISMR 2022, IEEE, pp. 1–5"
+  doi: "https://ieeexplore.ieee.org/document/9807548/"
+
+# ── ABSTRACTS ─────────────────────────────────────────────────
+
+- key: orcutt_aua2025
+  year: "2025"
+  type: abstract
+  title: "Transurethral Suturing Of Bladder Perforations Using a Concentric Tube Robot in a Porcine Model"
+  authors: "D. J. Orcutt, **J. F. d'Almeida**, E. Wilke, S. E. Purdue, K. A. Maciolek, S. D. Herrell III, R. J. Webster III, N. L. Kavoussi"
+  venue: "AUA 2025"
+  doi: ""
+  # AUA abstracts not publicly indexed — add if posted
+
+- key: dalmeida_icra2025_bladder
+  year: "2025"
+  type: abstract
+  title: "A Feasibility Study on Transurethral Robotic Suturing in the Bladder"
+  authors: "**J. F. d'Almeida**, E. Wilke, S. E. Purdue, K. Maciolek, N. Kavoussi, S. D. Herrell III, R. J. Webster III"
+  venue: "ICRA 2025"
+  doi: ""
+
+- key: chan_spie2021
+  year: "2021"
+  type: abstract
+  title: "On the merits of using angled fiber tips in office-based laser surgery of the vocal folds"
+  authors: "I. A. Chan*, **J. F. d'Almeida***, M. Zhu, A. J. Chiluisa, Y. Shen, Y. Liu, T. L. Carroll, L. Fichera, C. A. Linte, and J. H. Siewerdsen"
+  venue: "SPIE Medical Imaging 2021"
+  note: "★ Best Student Paper · *co-first authors"
+  doi: "https://doi.org/10.1117/12.2580454"
+  abstract: >
+    We investigate the merits of angled fiber tips for delivering laser energy to vocal fold
+    lesions during office-based laryngoscopic procedures, demonstrating improved targeting
+    accuracy and tissue coverage compared to flat-cleaved fibers.
+
+- key: chan_voice2020
+  year: "2020"
+  type: abstract
+  title: "Introducing Steerable Laser Fibers in Office-Based Laryngology Procedures"
+  authors: "I. A. Chan*, **J. F. d'Almeida***, M. Zhu, A. J. Chiluisa, Y. Shen, Y. Liu, T. L. Carroll, L. Fichera"
+  venue: "Fall Voice Conference 2020"
+  note: "*co-first authors"
+  doi: "https://doi.org/10.1117/12.2580454"
+
+# ── PATENTS ───────────────────────────────────────────────────
+# - key: dalmeida_patent_2025
+#   year: "2025"
+#   type: patent
+#   title: "Patent Title"
+#   authors: "**J. F. d'Almeida**, R. J. Webster III"
+#   venue: "US Patent No. XXXXXXX"
