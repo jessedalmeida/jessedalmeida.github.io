@@ -25,6 +25,9 @@ headshot: assets/images/headshot.jpg
 # YouTube video ID (the part after ?v= or after youtu.be/)
 youtube_id: iJAR9Tz76pc
 
+# Optional looping hero background video
+hero_video: assets/videos/header_video.mp4
+
 # ─────────────────────────────────────────────
 #  JEKYLL SETTINGS — don't need to touch these
 # ─────────────────────────────────────────────

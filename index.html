@@ -5,6 +5,14 @@ title: Home
 
 <!-- ══ HERO ══════════════════════════════════════════════════ -->
 <section id="hero">
+  {% if site.hero_video and site.hero_video != '' %}
+  <div class="hero-video-layer" aria-hidden="true">
+    <video autoplay muted loop playsinline preload="metadata">
+      <source src="{{ site.hero_video | relative_url }}">
+    </video>
+  </div>
+  {% endif %}
+  <div class="hero-video-overlay" aria-hidden="true"></div>
   <div class="hero-text">
     <div class="hero-tag">PhD Researcher · Surgical Robotics</div>
     <h1 class="hero-name">Jesse<br/><em>d'Almeida</em></h1>
@@ -79,7 +87,7 @@ title: Home
           <div class="stat-label">ARPA-H Grant Co-authored</div>
         </div>
         <div class="stat-card">
-          <div class="stat-number">3</div>
+          <div class="stat-number">2</div>
           <div class="stat-label">Degrees in Robotics &amp; ME</div>
         </div>
         <div class="stat-card">
@@ -275,6 +283,11 @@ title: Home
     <h2 class="section-title">Publications</h2>
     <div class="section-divider"></div>
 
+    <div class="pub-search-wrap">
+      <label class="pub-search-label" for="pub-search-input">Search publications</label>
+      <input id="pub-search-input" class="pub-search-input" type="search" placeholder="Search title, authors, venue..." />
+    </div>
+
     <!-- Filters -->
     <div class="pub-filters">
       <button class="pub-filter-btn active" data-filter="all">All</button>
@@ -286,7 +299,10 @@ title: Home
 
     <!-- Publication list -->
     <div class="pub-list">
+      {% assign publication_years = site.data.publications | map: "year" | uniq | sort | reverse %}
+      {% for pub_year in publication_years %}
       {% for pub in site.data.publications %}
+      {% if pub.year == pub_year %}
       {% assign has_expand_content = false %}
       {% if pub.abstract or pub.figure %}
         {% assign has_expand_content = true %}
@@ -345,6 +361,8 @@ title: Home
         </div>
         {% endif %}
       </div>
+      {% endif %}
+      {% endfor %}
       {% endfor %}
     </div>
 

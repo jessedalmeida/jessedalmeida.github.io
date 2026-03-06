@@ -68,22 +68,22 @@
 
 # ── CONFERENCE PAPERS ─────────────────────────────────────────
 
-- key: dalmeida_iros2026_needle
-  year: "2026"
-  type: conference
-  title: "Uncertainty-Aware Needle Handoff for Autonomous Endoscopic Suturing with Concentric Tube Robots"
-  authors: "**J. F. d'Almeida**, S. S. Stern, A. Kuntz, R. J. Webster III"
-  venue: "IROS 2026"
-  doi: ""
+# - key: dalmeida_iros2026_needle
+#   year: "2026"
+#   type: conference
+#   title: "Uncertainty-Aware Needle Handoff for Autonomous Endoscopic Suturing with Concentric Tube Robots"
+#   authors: "**J. F. d'Almeida**, S. S. Stern, A. Kuntz, R. J. Webster III"
+#   venue: "IROS 2026"
+#   doi: ""
   # Under review — add when accepted/published
 
-- key: minor_hamlyn2026_threading
-  year: "2026"
-  type: conference
-  title: "Threading the Robot: Trans-Concentric-Tube-Robot Delivery of Flexible Suturing Needles"
-  authors: "B. Minor, **J. F. d'Almeida**, S. S. Stern, and R. J. Webster III"
-  venue: "Hamlyn 2026"
-  doi: ""
+# - key: minor_hamlyn2026_threading
+#   year: "2026"
+#   type: conference
+#   title: "Threading the Robot: Trans-Concentric-Tube-Robot Delivery of Flexible Suturing Needles"
+#   authors: "B. Minor, **J. F. d'Almeida**, S. S. Stern, and R. J. Webster III"
+#   venue: "Hamlyn 2026"
+#   doi: ""
 
 - key: dalmeida_ismr2026_suturing
   year: "2026"
@@ -98,6 +98,7 @@
     We present a teleoperated suturing system for tracheal stent fixation using concentric tube robots, demonstrating precise needle control and secure fixation in a validated airway phantom.
   featured_media_type: video
   featured_media_url: "assets/videos/dalmeida_ismr2026_demo.mp4"
+  note: "* Best Paper Finalist"
 
 - key: watts_ismr2026_pushcvae
   year: "2026"

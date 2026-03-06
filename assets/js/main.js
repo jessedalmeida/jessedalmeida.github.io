@@ -91,17 +91,103 @@ document.querySelectorAll('.featured-pub-card').forEach(card => {
 const publicationRows = Array.from(document.querySelectorAll('.pub-row'));
 const publicationFilterButtons = Array.from(document.querySelectorAll('.pub-filter-btn'));
 const publicationSeeMoreButton = document.querySelector('#pub-see-more-btn');
+const publicationSearchInput = document.querySelector('#pub-search-input');
 const INITIAL_PUBLICATION_COUNT = 10;
 
 let activePublicationFilter = 'all';
 let publicationsExpanded = false;
+let publicationSearchQuery = '';
+
+const highlightSearchTargets = ['.pub-year', '.pub-title', '.pub-authors', '.pub-venue', '.pub-note'];
+
+const clearHighlights = container => {
+  container.querySelectorAll('mark.pub-highlight').forEach(mark => {
+    const textNode = document.createTextNode(mark.textContent || '');
+    mark.replaceWith(textNode);
+  });
+  container.normalize();
+};
+
+const highlightMatchesInElement = (element, regex) => {
+  const textNodes = [];
+  const walker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT, {
+    acceptNode(node) {
+      if (!node.nodeValue || node.nodeValue.trim() === '') return NodeFilter.FILTER_REJECT;
+      if (node.parentElement && node.parentElement.closest('mark.pub-highlight')) return NodeFilter.FILTER_REJECT;
+      return NodeFilter.FILTER_ACCEPT;
+    }
+  });
+
+  let current = walker.nextNode();
+  while (current) {
+    textNodes.push(current);
+    current = walker.nextNode();
+  }
+
+  textNodes.forEach(node => {
+    const text = node.nodeValue;
+    regex.lastIndex = 0;
+    if (!regex.test(text)) return;
+
+    const fragment = document.createDocumentFragment();
+    let lastIndex = 0;
+
+    text.replace(regex, (match, offset) => {
+      if (offset > lastIndex) {
+        fragment.appendChild(document.createTextNode(text.slice(lastIndex, offset)));
+      }
+      const mark = document.createElement('mark');
+      mark.className = 'pub-highlight';
+      mark.textContent = match;
+      fragment.appendChild(mark);
+      lastIndex = offset + match.length;
+      return match;
+    });
+
+    if (lastIndex < text.length) {
+      fragment.appendChild(document.createTextNode(text.slice(lastIndex)));
+    }
+
+    node.parentNode.replaceChild(fragment, node);
+  });
+};
+
+const updatePublicationHighlights = () => {
+  publicationRows.forEach(row => {
+    highlightSearchTargets.forEach(selector => {
+      row.querySelectorAll(selector).forEach(clearHighlights);
+    });
+  });
+
+  if (!publicationSearchQuery) return;
+
+  const safeQuery = publicationSearchQuery.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const regex = new RegExp(safeQuery, 'gi');
+
+  publicationRows.forEach(row => {
+    highlightSearchTargets.forEach(selector => {
+      row.querySelectorAll(selector).forEach(element => {
+        highlightMatchesInElement(element, regex);
+      });
+    });
+  });
+};
+
+const rowMatchesSearch = row => {
+  if (!publicationSearchQuery) return true;
+  const rowText = (row.textContent || '').toLowerCase();
+  return rowText.includes(publicationSearchQuery);
+};
 
 const closeOpenPublicationRows = () => {
   document.querySelectorAll('.pub-item.open').forEach(item => item.classList.remove('open'));
 };
 
 const filteredPublicationRows = () => {
-  return publicationRows.filter(row => activePublicationFilter === 'all' || row.dataset.type === activePublicationFilter);
+  return publicationRows.filter(row => {
+    const matchesType = activePublicationFilter === 'all' || row.dataset.type === activePublicationFilter;
+    return matchesType && rowMatchesSearch(row);
+  });
 };
 
 const updatePublicationListView = () => {
@@ -152,6 +238,17 @@ if (publicationSeeMoreButton) {
   });
 }
 
+if (publicationSearchInput) {
+  publicationSearchInput.addEventListener('input', () => {
+    publicationSearchQuery = publicationSearchInput.value.trim().toLowerCase();
+    publicationsExpanded = false;
+    closeOpenPublicationRows();
+    updatePublicationHighlights();
+    updatePublicationListView();
+  });
+}
+
+updatePublicationHighlights();
 updatePublicationListView();
 
 

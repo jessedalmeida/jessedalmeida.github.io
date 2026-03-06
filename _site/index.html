@@ -28,6 +28,14 @@
 
   <!-- ══ HERO ══════════════════════════════════════════════════ -->
 <section id="hero">
+  
+  <div class="hero-video-layer" aria-hidden="true">
+    <video autoplay muted loop playsinline preload="metadata">
+      <source src="/assets/videos/header_video.mp4">
+    </video>
+  </div>
+  
+  <div class="hero-video-overlay" aria-hidden="true"></div>
   <div class="hero-text">
     <div class="hero-tag">PhD Researcher · Surgical Robotics</div>
     <h1 class="hero-name">Jesse<br/><em>d'Almeida</em></h1>
@@ -94,7 +102,7 @@
       </div>
       <div class="about-stats">
         <div class="stat-card">
-          <div class="stat-number">26+</div>
+          <div class="stat-number">24+</div>
           <div class="stat-label">Publications &amp; Proceedings</div>
         </div>
         <div class="stat-card">
@@ -102,7 +110,7 @@
           <div class="stat-label">ARPA-H Grant Co-authored</div>
         </div>
         <div class="stat-card">
-          <div class="stat-number">3</div>
+          <div class="stat-number">2</div>
           <div class="stat-label">Degrees in Robotics &amp; ME</div>
         </div>
         <div class="stat-card">
@@ -430,6 +438,11 @@
     <h2 class="section-title">Publications</h2>
     <div class="section-divider"></div>
 
+    <div class="pub-search-wrap">
+      <label class="pub-search-label" for="pub-search-input">Search publications</label>
+      <input id="pub-search-input" class="pub-search-input" type="search" placeholder="Search title, authors, venue..." />
+    </div>
+
     <!-- Filters -->
     <div class="pub-filters">
       <button class="pub-filter-btn active" data-filter="all">All</button>
@@ -447,108 +460,7 @@
       
       
       
-      <div class="pub-row" data-type="journal">
-        <div class="pub-item" data-key="dalmeida_jmrr_2025" id="pub-dalmeida_jmrr_2025">
-          <span class="pub-year">2025</span>
-          <div>
-            
-            <div class="pub-title"><a class="pub-title-link" href="/assets/papers/2025_JMRR_MRI_Robotic_Focal_Prostate_Resection.pdf" target="_blank">Toward Image-Guided, Robot-Assisted Focal Prostate Resection: Do Enhanced Dexterity and Visualization Improve Performance?</a></div>
-            
-            <div class="pub-authors"><strong>J. F. d'Almeida</strong>, J. A. Shrand, S. Garrow, C. E. Vaughn, N. L. Kavoussi, S. Setia, A. Reed, S. S. Stern, T. E. Ertop, A. E. Ghazi, S. D. Herrell, W. A. Grissom, and R. J. Webster III</div>
-            <div class="pub-venue">Journal of Medical Robotics Research (JMRR)</div>
-            
-            
-            <div class="pub-links-inline">
-              <a href="/assets/papers/2025_JMRR_MRI_Robotic_Focal_Prostate_Resection.pdf" target="_blank">PDF</a>
-              
-              <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12889886/" target="_blank">DOI</a>
-            </div>
-            
-          </div>
-        </div>
-        
-      </div>
       
-      
-      
-      
-      
-      
-      <div class="pub-row" data-type="journal">
-        <div class="pub-item" data-key="dalmeida_jendo_2025" id="pub-dalmeida_jendo_2025">
-          <span class="pub-year">2025</span>
-          <div>
-            
-            <div class="pub-title"><a class="pub-title-link" href="/assets/papers/2025_JEndo_Transurethral_Anastomosis.pdf" target="_blank">Robotic Transurethral Vesicourethral Anastomosis after Radical Prostatectomy in Validated Models</a></div>
-            
-            <div class="pub-authors"><strong>J. F. d'Almeida</strong>, K. Maciolek, E. Wilke, J. Shrand, L. Shepard, T. E. Ertop, A. E. Ghazi, R. J. Webster III, S. D. Herrell III, N. L. Kavoussi</div>
-            <div class="pub-venue">Journal of Endourology (JEndo)</div>
-            
-            
-            <div class="pub-links-inline">
-              <a href="/assets/papers/2025_JEndo_Transurethral_Anastomosis.pdf" target="_blank">PDF</a>
-              
-              
-            </div>
-            
-          </div>
-        </div>
-        
-      </div>
-      
-      
-      
-      
-      
-      
-      <div class="pub-row" data-type="conference">
-        <div class="pub-item" data-key="dalmeida_iros2026_needle" id="pub-dalmeida_iros2026_needle">
-          <span class="pub-year">2026</span>
-          <div>
-            
-            <div class="pub-title">Uncertainty-Aware Needle Handoff for Autonomous Endoscopic Suturing with Concentric Tube Robots</div>
-            
-            <div class="pub-authors"><strong>J. F. d'Almeida</strong>, S. S. Stern, A. Kuntz, R. J. Webster III</div>
-            <div class="pub-venue">IROS 2026</div>
-            
-            
-            <div class="pub-links-inline">
-              
-              
-              
-            </div>
-            
-          </div>
-        </div>
-        
-      </div>
-      
-      
-      
-      
-      
-      
-      <div class="pub-row" data-type="conference">
-        <div class="pub-item" data-key="minor_hamlyn2026_threading" id="pub-minor_hamlyn2026_threading">
-          <span class="pub-year">2026</span>
-          <div>
-            
-            <div class="pub-title">Threading the Robot: Trans-Concentric-Tube-Robot Delivery of Flexible Suturing Needles</div>
-            
-            <div class="pub-authors">B. Minor, <strong>J. F. d'Almeida</strong>, S. S. Stern, and R. J. Webster III</div>
-            <div class="pub-venue">Hamlyn 2026</div>
-            
-            
-            <div class="pub-links-inline">
-              
-              
-              
-            </div>
-            
-          </div>
-        </div>
-        
-      </div>
       
       
       
@@ -564,7 +476,7 @@
             
             <div class="pub-authors"><strong>J. F. d'Almeida</strong>, L. Branscombe, A. O. Chara, S. Stern, F. Maldonado, A. Kuntz, and R. J. Webster III</div>
             <div class="pub-venue">ISMR 2026</div>
-            
+            <div class="pub-note">* Best Paper Finalist</div>
             
             <div class="pub-links-inline">
               <a href="/assets/papers/2026_ISMR_ALISS_Teleop_Stent_Fixation_Final_Revised.pdf" target="_blank">PDF</a>
@@ -576,6 +488,8 @@
         </div>
         
       </div>
+      
+      
       
       
       
@@ -609,6 +523,8 @@
       
       
       
+      
+      
       <div class="pub-row" data-type="conference">
         <div class="pub-item" data-key="smith_ismr2026_resection" id="pub-smith_ismr2026_resection">
           <span class="pub-year">2026</span>
@@ -630,6 +546,8 @@
         </div>
         
       </div>
+      
+      
       
       
       
@@ -663,6 +581,8 @@
       
       
       
+      
+      
       <div class="pub-row" data-type="conference">
         <div class="pub-item" data-key="isik_spie2026_benchmark" id="pub-isik_spie2026_benchmark">
           <span class="pub-year">2026</span>
@@ -684,6 +604,8 @@
         </div>
         
       </div>
+      
+      
       
       
       
@@ -717,6 +639,8 @@
       
       
       
+      
+      
       <div class="pub-row" data-type="conference">
         <div class="pub-item" data-key="oguine_spie2026_labeling" id="pub-oguine_spie2026_labeling">
           <span class="pub-year">2026</span>
@@ -738,6 +662,112 @@
         </div>
         
       </div>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <div class="pub-row" data-type="journal">
+        <div class="pub-item" data-key="dalmeida_jmrr_2025" id="pub-dalmeida_jmrr_2025">
+          <span class="pub-year">2025</span>
+          <div>
+            
+            <div class="pub-title"><a class="pub-title-link" href="/assets/papers/2025_JMRR_MRI_Robotic_Focal_Prostate_Resection.pdf" target="_blank">Toward Image-Guided, Robot-Assisted Focal Prostate Resection: Do Enhanced Dexterity and Visualization Improve Performance?</a></div>
+            
+            <div class="pub-authors"><strong>J. F. d'Almeida</strong>, J. A. Shrand, S. Garrow, C. E. Vaughn, N. L. Kavoussi, S. Setia, A. Reed, S. S. Stern, T. E. Ertop, A. E. Ghazi, S. D. Herrell, W. A. Grissom, and R. J. Webster III</div>
+            <div class="pub-venue">Journal of Medical Robotics Research (JMRR)</div>
+            
+            
+            <div class="pub-links-inline">
+              <a href="/assets/papers/2025_JMRR_MRI_Robotic_Focal_Prostate_Resection.pdf" target="_blank">PDF</a>
+              
+              <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12889886/" target="_blank">DOI</a>
+            </div>
+            
+          </div>
+        </div>
+        
+      </div>
+      
+      
+      
+      
+      
+      
+      
+      
+      <div class="pub-row" data-type="journal">
+        <div class="pub-item" data-key="dalmeida_jendo_2025" id="pub-dalmeida_jendo_2025">
+          <span class="pub-year">2025</span>
+          <div>
+            
+            <div class="pub-title"><a class="pub-title-link" href="/assets/papers/2025_JEndo_Transurethral_Anastomosis.pdf" target="_blank">Robotic Transurethral Vesicourethral Anastomosis after Radical Prostatectomy in Validated Models</a></div>
+            
+            <div class="pub-authors"><strong>J. F. d'Almeida</strong>, K. Maciolek, E. Wilke, J. Shrand, L. Shepard, T. E. Ertop, A. E. Ghazi, R. J. Webster III, S. D. Herrell III, N. L. Kavoussi</div>
+            <div class="pub-venue">Journal of Endourology (JEndo)</div>
+            
+            
+            <div class="pub-links-inline">
+              <a href="/assets/papers/2025_JEndo_Transurethral_Anastomosis.pdf" target="_blank">PDF</a>
+              
+              
+            </div>
+            
+          </div>
+        </div>
+        
+      </div>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
       
       
       
@@ -771,6 +801,8 @@
       
       
       
+      
+      
       <div class="pub-row" data-type="conference">
         <div class="pub-item" data-key="wilke_hamlyn2025_needlescopic" id="pub-wilke_hamlyn2025_needlescopic">
           <span class="pub-year">2025</span>
@@ -792,6 +824,8 @@
         </div>
         
       </div>
+      
+      
       
       
       
@@ -825,6 +859,8 @@
       
       
       
+      
+      
       <div class="pub-row" data-type="conference">
         <div class="pub-item" data-key="dalmeida_ismr2025_prostate" id="pub-dalmeida_ismr2025_prostate">
           <span class="pub-year">2025</span>
@@ -846,6 +882,8 @@
         </div>
         
       </div>
+      
+      
       
       
       
@@ -879,162 +917,14 @@
       
       
       
-      <div class="pub-row" data-type="conference">
-        <div class="pub-item" data-key="shrand_ismr2024" id="pub-shrand_ismr2024">
-          <span class="pub-year">2024</span>
-          <div>
-            
-            <div class="pub-title"><a class="pub-title-link" href="https://ieeexplore.ieee.org/document/10586084/" target="_blank">Enhancing Accuracy in Transendoscopic Concentric Tube Robots for Monocular Endoscope Guidance</a></div>
-            
-            <div class="pub-authors">J. Shrand, <strong>J. F. d'Almeida</strong>, E. Wilke, A. Reed, N. L. Kavoussi, S. D. Herrell III, T. E. Ertop, and R. J. Webster III</div>
-            <div class="pub-venue">ISMR 2024, IEEE, pp. 1–3</div>
-            
-            
-            <div class="pub-links-inline">
-              
-              
-              <a href="https://ieeexplore.ieee.org/document/10586084/" target="_blank">DOI</a>
-            </div>
-            
-          </div>
-        </div>
-        
-      </div>
       
       
       
       
       
       
-      <div class="pub-row" data-type="conference">
-        <div class="pub-item" data-key="wilke_spie2024" id="pub-wilke_spie2024">
-          <span class="pub-year">2024</span>
-          <div>
-            
-            <div class="pub-title"><a class="pub-title-link" href="https://doi.org/10.1117/12.3008773" target="_blank">A Comparison of Onboard and Offboard User Interfaces for Handheld Robots</a></div>
-            
-            <div class="pub-authors">E. Wilke, <strong>J. F. d'Almeida</strong>, J. A. Shrand, T. E. Ertop, N. L. Kavoussi, A. Reed, S. D. Herrell III, and R. J. Webster III</div>
-            <div class="pub-venue">SPIE Medical Imaging 2024, vol. 12928, pp. 533–537</div>
-            
-            
-            <div class="pub-links-inline">
-              
-              
-              <a href="https://doi.org/10.1117/12.3008773" target="_blank">DOI</a>
-            </div>
-            
-          </div>
-        </div>
-        
-      </div>
       
       
-      
-      
-      
-      
-      <div class="pub-row" data-type="conference">
-        <div class="pub-item" data-key="shrand_spie2023" id="pub-shrand_spie2023">
-          <span class="pub-year">2023</span>
-          <div>
-            
-            <div class="pub-title"><a class="pub-title-link" href="https://doi.org/10.1117/12.2655803" target="_blank">A Virtual Reality Framework for Evaluating Concentric Tube Surgical Robot Designs</a></div>
-            
-            <div class="pub-authors">J. A. Shrand, <strong>J. F. d'Almeida</strong>, T. E. Ertop, N. L. Kavoussi, S. A. Setia, S. D. Herrell III, and R. J. Webster III</div>
-            <div class="pub-venue">SPIE Medical Imaging 2023</div>
-            
-            
-            <div class="pub-links-inline">
-              
-              
-              <a href="https://doi.org/10.1117/12.2655803" target="_blank">DOI</a>
-            </div>
-            
-          </div>
-        </div>
-        
-      </div>
-      
-      
-      
-      
-      
-      
-      <div class="pub-row" data-type="conference">
-        <div class="pub-item" data-key="picho_hamlyn2022" id="pub-picho_hamlyn2022">
-          <span class="pub-year">2022</span>
-          <div>
-            
-            <div class="pub-title"><a class="pub-title-link" href="https://arxiv.org/abs/2204.00505" target="_blank">Multi Jet Fusion of Nylon-12: A Viable Method to 3D-print Concentric Tube Robots?</a></div>
-            
-            <div class="pub-authors">K. Picho, B. Persons, <strong>J. F. d'Almeida</strong>, N. Pacheco, C. Reynolds, L. Fichera</div>
-            <div class="pub-venue">Hamlyn Symposium 2022</div>
-            
-            
-            <div class="pub-links-inline">
-              
-              
-              <a href="https://arxiv.org/abs/2204.00505" target="_blank">DOI</a>
-            </div>
-            
-          </div>
-        </div>
-        
-      </div>
-      
-      
-      
-      
-      
-      
-      <div class="pub-row" data-type="conference">
-        <div class="pub-item" data-key="dalmeida_hamlyn2022" id="pub-dalmeida_hamlyn2022">
-          <span class="pub-year">2022</span>
-          <div>
-            
-            <div class="pub-title">Toward Bipolar Electrosurgery with Concentric Tube Robots</div>
-            
-            <div class="pub-authors"><strong>J. F. d'Almeida</strong>, M. Rox, and R. J. Webster III</div>
-            <div class="pub-venue">Hamlyn Symposium on Medical Robotics 2022</div>
-            
-            
-            <div class="pub-links-inline">
-              
-              
-              
-            </div>
-            
-          </div>
-        </div>
-        
-      </div>
-      
-      
-      
-      
-      
-      
-      <div class="pub-row" data-type="conference">
-        <div class="pub-item" data-key="ertop_ismr2022" id="pub-ertop_ismr2022">
-          <span class="pub-year">2022</span>
-          <div>
-            
-            <div class="pub-title"><a class="pub-title-link" href="https://ieeexplore.ieee.org/document/9807548/" target="_blank">Towards Suturing From Within the Urethra Using Concentric Tube Robots: First Experiences in Biological Tissues</a></div>
-            
-            <div class="pub-authors">T. E. Ertop, <strong>J. F. d'Almeida</strong>, E. Amanov, J. Shrand, N. Nimmagadda, S. Setia, N. L. Kavoussi, S. D. Herrell III, and R. J. Webster III</div>
-            <div class="pub-venue">ISMR 2022, IEEE, pp. 1–5</div>
-            
-            
-            <div class="pub-links-inline">
-              
-              
-              <a href="https://ieeexplore.ieee.org/document/9807548/" target="_blank">DOI</a>
-            </div>
-            
-          </div>
-        </div>
-        
-      </div>
       
       
       
@@ -1068,6 +958,8 @@
       
       
       
+      
+      
       <div class="pub-row" data-type="abstract">
         <div class="pub-item" data-key="dalmeida_icra2025_bladder" id="pub-dalmeida_icra2025_bladder">
           <span class="pub-year">2025</span>
@@ -1089,6 +981,370 @@
         </div>
         
       </div>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <div class="pub-row" data-type="conference">
+        <div class="pub-item" data-key="shrand_ismr2024" id="pub-shrand_ismr2024">
+          <span class="pub-year">2024</span>
+          <div>
+            
+            <div class="pub-title"><a class="pub-title-link" href="https://ieeexplore.ieee.org/document/10586084/" target="_blank">Enhancing Accuracy in Transendoscopic Concentric Tube Robots for Monocular Endoscope Guidance</a></div>
+            
+            <div class="pub-authors">J. Shrand, <strong>J. F. d'Almeida</strong>, E. Wilke, A. Reed, N. L. Kavoussi, S. D. Herrell III, T. E. Ertop, and R. J. Webster III</div>
+            <div class="pub-venue">ISMR 2024, IEEE, pp. 1–3</div>
+            
+            
+            <div class="pub-links-inline">
+              
+              
+              <a href="https://ieeexplore.ieee.org/document/10586084/" target="_blank">DOI</a>
+            </div>
+            
+          </div>
+        </div>
+        
+      </div>
+      
+      
+      
+      
+      
+      
+      
+      
+      <div class="pub-row" data-type="conference">
+        <div class="pub-item" data-key="wilke_spie2024" id="pub-wilke_spie2024">
+          <span class="pub-year">2024</span>
+          <div>
+            
+            <div class="pub-title"><a class="pub-title-link" href="https://doi.org/10.1117/12.3008773" target="_blank">A Comparison of Onboard and Offboard User Interfaces for Handheld Robots</a></div>
+            
+            <div class="pub-authors">E. Wilke, <strong>J. F. d'Almeida</strong>, J. A. Shrand, T. E. Ertop, N. L. Kavoussi, A. Reed, S. D. Herrell III, and R. J. Webster III</div>
+            <div class="pub-venue">SPIE Medical Imaging 2024, vol. 12928, pp. 533–537</div>
+            
+            
+            <div class="pub-links-inline">
+              
+              
+              <a href="https://doi.org/10.1117/12.3008773" target="_blank">DOI</a>
+            </div>
+            
+          </div>
+        </div>
+        
+      </div>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <div class="pub-row" data-type="conference">
+        <div class="pub-item" data-key="shrand_spie2023" id="pub-shrand_spie2023">
+          <span class="pub-year">2023</span>
+          <div>
+            
+            <div class="pub-title"><a class="pub-title-link" href="https://doi.org/10.1117/12.2655803" target="_blank">A Virtual Reality Framework for Evaluating Concentric Tube Surgical Robot Designs</a></div>
+            
+            <div class="pub-authors">J. A. Shrand, <strong>J. F. d'Almeida</strong>, T. E. Ertop, N. L. Kavoussi, S. A. Setia, S. D. Herrell III, and R. J. Webster III</div>
+            <div class="pub-venue">SPIE Medical Imaging 2023</div>
+            
+            
+            <div class="pub-links-inline">
+              
+              
+              <a href="https://doi.org/10.1117/12.2655803" target="_blank">DOI</a>
+            </div>
+            
+          </div>
+        </div>
+        
+      </div>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <div class="pub-row" data-type="conference">
+        <div class="pub-item" data-key="picho_hamlyn2022" id="pub-picho_hamlyn2022">
+          <span class="pub-year">2022</span>
+          <div>
+            
+            <div class="pub-title"><a class="pub-title-link" href="https://arxiv.org/abs/2204.00505" target="_blank">Multi Jet Fusion of Nylon-12: A Viable Method to 3D-print Concentric Tube Robots?</a></div>
+            
+            <div class="pub-authors">K. Picho, B. Persons, <strong>J. F. d'Almeida</strong>, N. Pacheco, C. Reynolds, L. Fichera</div>
+            <div class="pub-venue">Hamlyn Symposium 2022</div>
+            
+            
+            <div class="pub-links-inline">
+              
+              
+              <a href="https://arxiv.org/abs/2204.00505" target="_blank">DOI</a>
+            </div>
+            
+          </div>
+        </div>
+        
+      </div>
+      
+      
+      
+      
+      
+      
+      
+      
+      <div class="pub-row" data-type="conference">
+        <div class="pub-item" data-key="dalmeida_hamlyn2022" id="pub-dalmeida_hamlyn2022">
+          <span class="pub-year">2022</span>
+          <div>
+            
+            <div class="pub-title">Toward Bipolar Electrosurgery with Concentric Tube Robots</div>
+            
+            <div class="pub-authors"><strong>J. F. d'Almeida</strong>, M. Rox, and R. J. Webster III</div>
+            <div class="pub-venue">Hamlyn Symposium on Medical Robotics 2022</div>
+            
+            
+            <div class="pub-links-inline">
+              
+              
+              
+            </div>
+            
+          </div>
+        </div>
+        
+      </div>
+      
+      
+      
+      
+      
+      
+      
+      
+      <div class="pub-row" data-type="conference">
+        <div class="pub-item" data-key="ertop_ismr2022" id="pub-ertop_ismr2022">
+          <span class="pub-year">2022</span>
+          <div>
+            
+            <div class="pub-title"><a class="pub-title-link" href="https://ieeexplore.ieee.org/document/9807548/" target="_blank">Towards Suturing From Within the Urethra Using Concentric Tube Robots: First Experiences in Biological Tissues</a></div>
+            
+            <div class="pub-authors">T. E. Ertop, <strong>J. F. d'Almeida</strong>, E. Amanov, J. Shrand, N. Nimmagadda, S. Setia, N. L. Kavoussi, S. D. Herrell III, and R. J. Webster III</div>
+            <div class="pub-venue">ISMR 2022, IEEE, pp. 1–5</div>
+            
+            
+            <div class="pub-links-inline">
+              
+              
+              <a href="https://ieeexplore.ieee.org/document/9807548/" target="_blank">DOI</a>
+            </div>
+            
+          </div>
+        </div>
+        
+      </div>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
       
       
       
@@ -1141,6 +1397,58 @@
       
       
       
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
       <div class="pub-row" data-type="abstract">
         <div class="pub-item" data-key="chan_voice2020" id="pub-chan_voice2020">
           <span class="pub-year">2020</span>
@@ -1162,6 +1470,8 @@
         </div>
         
       </div>
+      
+      
       
     </div>
 
