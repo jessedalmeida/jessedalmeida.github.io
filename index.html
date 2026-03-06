@@ -40,28 +40,14 @@ title: Home
 <!-- ══ ABOUT ══════════════════════════════════════════════════ -->
 <section id="about">
   <div class="container">
-    <p class="section-label">Background</p>
-    <h2 class="section-title">About Me</h2>
+    <p class="section-label">{{ site.data.about.section_label }}</p>
+    <h2 class="section-title">{{ site.data.about.section_title }}</h2>
     <div class="section-divider"></div>
     <div class="about-grid">
       <div class="about-text">
-        <p>
-          I'm a PhD student in Mechanical Engineering at Vanderbilt University, where I work in the 
-          <a href="{{ site.lab_url }}" target="_blank" style="color:var(--teal)">Medical Engineering and Discovery Lab (MEDLab)</a> 
-          under {{ site.advisor }}. My research focuses on continuum and concentric tube robots 
-          for minimally invasive surgery — systems that can navigate the body's natural pathways to 
-          reach places traditional tools cannot.
-        </p>
-        <p>
-          I completed my MS and BS in Robotics Engineering at Worcester Polytechnic Institute (WPI), 
-          where I worked with Dr. Loris Fichera on accessible concentric tube robot designs and 
-          steerable laser fibers for office-based laryngeal surgery.
-        </p>
-        <p>
-          I'm passionate about the full arc from blue-sky research to clinical impact. My work spans 
-          robot design and fabrication, kinematic modeling, surgical workflow integration, and 
-          collaboration directly with surgeons on phantom and tissue experiments.
-        </p>
+        {% for paragraph in site.data.about.paragraphs %}
+        <p>{{ paragraph }}</p>
+        {% endfor %}
         <div class="contact-links">
           <a class="contact-link" href="mailto:{{ site.email }}">
             <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
@@ -78,22 +64,16 @@ title: Home
         </div>
       </div>
       <div class="about-stats">
+        {% for stat in site.data.about.stats %}
         <div class="stat-card">
-          <div class="stat-number">{{ site.data.publications | size }}+</div>
-          <div class="stat-label">Publications &amp; Proceedings</div>
+          {% if stat.value_key == 'publications_count' %}
+          <div class="stat-number">{{ site.data.publications | size }}{{ stat.suffix | default: '' }}</div>
+          {% else %}
+          <div class="stat-number">{{ stat.value }}</div>
+          {% endif %}
+          <div class="stat-label">{{ stat.label }}</div>
         </div>
-        <div class="stat-card">
-          <div class="stat-number">$12M</div>
-          <div class="stat-label">ARPA-H Grant Co-authored</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number">2</div>
-          <div class="stat-label">Degrees in Robotics &amp; ME</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number">4+</div>
-          <div class="stat-label">Years at Vanderbilt MEDLab</div>
-        </div>
+        {% endfor %}
       </div>
     </div>
   </div>

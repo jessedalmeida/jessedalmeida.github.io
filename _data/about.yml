@@ -1,0 +1,28 @@
+# About section content used on homepage.
+section_label: "Background"
+section_title: "About Me"
+paragraphs:
+  - >
+    I'm a PhD student in Mechanical Engineering at Vanderbilt University, where I work in the Medical
+    Engineering and Discovery Lab (MEDLab) under Dr. Robert J. Webster III. My research focuses on
+    continuum and concentric tube robots for minimally invasive surgery - systems that can navigate
+    the body's natural pathways to reach places traditional tools cannot.
+  - >
+    I completed my MS and BS in Robotics Engineering at Worcester Polytechnic Institute (WPI), where
+    I worked with Dr. Loris Fichera on accessible concentric tube robot designs and steerable laser
+    fibers for office-based laryngeal surgery.
+  - >
+    I'm passionate about the full arc from blue-sky research to clinical impact. My work spans robot
+    design and fabrication, kinematic modeling, surgical workflow integration, and collaboration
+    directly with surgeons on phantom and tissue experiments.
+
+stats:
+  - value_key: publications_count
+    suffix: "+"
+    label: "Publications & Proceedings"
+  - value: "$12M"
+    label: "ARPA-H Grant Co-authored"
+  - value: "2"
+    label: "Degrees in Robotics & ME"
+  - value: "4+"
+    label: "Years at Vanderbilt MEDLab"
