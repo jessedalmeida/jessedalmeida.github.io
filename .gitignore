@@ -1,0 +1,25 @@
+# macOS
+.DS_Store
+
+# Jekyll build output and caches
+_site/
+.jekyll-cache/
+.jekyll-metadata
+.sass-cache/
+
+# Ruby/Bundler local artifacts
+.bundle/
+vendor/bundle/
+
+# Logs and temp files
+*.log
+*.tmp
+*.swp
+
+# Local env files
+.env
+.env.*
+
+# Editors/IDEs
+.vscode/
+.idea/

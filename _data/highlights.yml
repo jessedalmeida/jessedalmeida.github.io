@@ -1,0 +1,78 @@
+# ═══════════════════════════════════════════════════════════════
+#  HIGHLIGHTS  —  highlights.yml
+#
+#  HOW TO ADD A NEW HIGHLIGHT:
+#  1. Copy an existing entry
+#  2. Set type to: talk | award | grant | paper | outreach | news
+#  3. featured: true gives the card a gold border (use sparingly)
+# ═══════════════════════════════════════════════════════════════
+
+- key: transferma_keynote
+  type: talk
+  date: "2024"
+  featured: true
+  title: "Keynote: Discovering Surgical Robotics — From First Steps to Breakthroughs"
+  body: >
+    Invited keynote speaker at the TransformA Congress for Biomedical Engineering Students 
+    at Universidad Anáhuac Mayab in Mérida, Mexico. Presented Vanderbilt MEDLab's work in 
+    surgical robotics and shared what research looks like across career stages — inspiring 
+    the next generation of biomedical engineers. Presented in both English and Spanish.
+  location: "Mérida, Mexico · Universidad Anáhuac Mayab"
+
+- key: arpa_h_award
+  type: grant
+  date: "2024"
+  featured: false
+  title: "ARPA-H Award: Autonomy at a Less Invasive Scale (ALISS) — up to $12M"
+  body: >
+    Co-authored the initial proposal for a landmark multi-institutional surgical autonomy 
+    project led by Dr. Robert Webster III. The project — focused on automating suturing 
+    and hemostasis in minimally invasive surgery — was successfully awarded up to $12 million 
+    from the Advanced Research Projects Agency for Health (ARPA-H).
+  location: "Vanderbilt University · MEDLab"
+
+- key: nsf_grfp
+  type: award
+  date: "2022"
+  featured: false
+  title: "NSF Graduate Research Fellowship (GRFP)"
+  body: >
+    Recipient of the National Science Foundation Graduate Research Fellowship Program, 
+    one of the most prestigious graduate fellowships in the US, recognizing outstanding 
+    research potential in surgical robotics and medical engineering.
+  location: "National Science Foundation"
+
+- key: spie2021_best_paper
+  type: award
+  date: "2021"
+  featured: false
+  title: "Best Student Paper — SPIE Medical Imaging 2021"
+  body: >
+    Awarded Best Student Paper (co-first author) for work on angled laser fiber tips 
+    in office-based vocal fold surgery. The paper demonstrated that angled fiber 
+    geometries significantly improve targeting accuracy for pre-malignant lesion treatment.
+  location: "SPIE Medical Imaging Conference"
+
+- key: hamlyn2025_paper
+  type: paper
+  date: "2025"
+  featured: false
+  title: "Paper Accepted: Needlescopic Robot for Pediatric Esophageal Repair · Hamlyn 2025"
+  body: >
+    Paper accepted at the Hamlyn Symposium on Medical Robotics presenting a needlescopic 
+    robot designed to enable minimally invasive closed-chest repair of congenital 
+    tracheal-esophageal defects — a first-of-its-kind robotic approach to this 
+    pediatric surgical challenge.
+  location: "Hamlyn Symposium on Medical Robotics · 2025"
+
+- key: multilingual_outreach
+  type: outreach
+  date: "Ongoing"
+  featured: false
+  title: "Multilingual Science Communication"
+  body: >
+    A native English and advanced Portuguese speaker with intermediate Spanish, Jesse 
+    actively engages international audiences — including presenting in Spanish at 
+    conferences in Latin America to broaden the reach of surgical robotics research 
+    beyond English-speaking institutions.
+  location: "English · Portuguese · Spanish"

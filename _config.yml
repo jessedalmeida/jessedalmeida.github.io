@@ -1,0 +1,45 @@
+# ─────────────────────────────────────────────
+#  SITE SETTINGS — edit these to update your info
+# ─────────────────────────────────────────────
+title: Jesse d'Almeida
+tagline: PhD Researcher · Surgical Robotics
+description: >
+  PhD student in Mechanical Engineering at Vanderbilt University, 
+  building minimally invasive robotic systems for surgery.
+
+# Your links
+email: jesse.f.dalmeida@vanderbilt.edu
+linkedin: https://www.linkedin.com/in/jesse-dalmeida
+scholar: https://scholar.google.com/citations?user=JFn_cXYAAAAJ&hl=en
+github: https://github.com/jesse-dalmeida
+lab_url: https://www.medicalengineeringlab.com
+lab_name: Vanderbilt MEDLab
+advisor: Dr. Robert J. Webster III
+university: Vanderbilt University
+department: Mechanical Engineering
+degree: PhD Student
+
+# Your photo (place file in assets/images/)
+headshot: assets/images/headshot.jpg
+
+# YouTube video ID (the part after ?v= or after youtu.be/)
+youtube_id: iJAR9Tz76pc
+
+# Optional looping hero background video
+hero_video: assets/videos/header_video.mp4
+
+# ─────────────────────────────────────────────
+#  JEKYLL SETTINGS — don't need to touch these
+# ─────────────────────────────────────────────
+baseurl: ""
+url: "https://jesse-dalmeida.github.io"
+
+markdown: kramdown
+theme: null
+plugins:
+  - jekyll-seo-tag
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
