@@ -7,14 +7,15 @@
 #  3. featured: true gives the card a gold border (use sparingly)
 # ═══════════════════════════════════════════════════════════════
 
-- key: transferma_keynote
+- key: transforma_keynote
   type: talk
   date: "2024"
   featured: true
+  image: "assets/images/transforma_keynote.png"
   title: "Keynote: Discovering Surgical Robotics — From First Steps to Breakthroughs"
   body: >
     Invited keynote speaker at the TransformA Congress for Biomedical Engineering Students 
-    at Universidad Anáhuac Mayab in Mérida, Mexico. Presented Vanderbilt MEDLab's work in 
+    at Universidad Anáhuac Mayab in Mérida, Mexico. Presented my and my lab's work in 
     surgical robotics and shared what research looks like across career stages — inspiring 
     the next generation of biomedical engineers. Presented in both English and Spanish.
   location: "Mérida, Mexico · Universidad Anáhuac Mayab"
@@ -22,12 +23,13 @@
 - key: arpa_h_award
   type: grant
   date: "2024"
-  featured: false
+  featured: true
+  image: "assets/images/arpa_h_award.jpg"
   title: "ARPA-H Award: Autonomy at a Less Invasive Scale (ALISS) — up to $12M"
   body: >
     Co-authored the initial proposal for a landmark multi-institutional surgical autonomy 
-    project led by Dr. Robert Webster III. The project — focused on automating suturing 
-    and hemostasis in minimally invasive surgery — was successfully awarded up to $12 million 
+    project led by Dr. Robert Webster III. The project, focused on automation in minimally invasive surgery, 
+    was successfully awarded up to $12 million 
     from the Advanced Research Projects Agency for Health (ARPA-H).
   location: "Vanderbilt University · MEDLab"
 
@@ -53,26 +55,14 @@
     geometries significantly improve targeting accuracy for pre-malignant lesion treatment.
   location: "SPIE Medical Imaging Conference"
 
-- key: hamlyn2025_paper
-  type: paper
-  date: "2025"
-  featured: false
-  title: "Paper Accepted: Needlescopic Robot for Pediatric Esophageal Repair · Hamlyn 2025"
-  body: >
-    Paper accepted at the Hamlyn Symposium on Medical Robotics presenting a needlescopic 
-    robot designed to enable minimally invasive closed-chest repair of congenital 
-    tracheal-esophageal defects — a first-of-its-kind robotic approach to this 
-    pediatric surgical challenge.
-  location: "Hamlyn Symposium on Medical Robotics · 2025"
-
 - key: multilingual_outreach
   type: outreach
   date: "Ongoing"
   featured: false
   title: "Multilingual Science Communication"
   body: >
-    A native English and advanced Portuguese speaker with intermediate Spanish, Jesse 
-    actively engages international audiences — including presenting in Spanish at 
+    A native English, with advanced Portuguese and intermediate Spanish, I 
+    actively engage international audiences, including presenting in Spanish at 
     conferences in Latin America to broaden the reach of surgical robotics research 
     beyond English-speaking institutions.
   location: "English · Portuguese · Spanish"

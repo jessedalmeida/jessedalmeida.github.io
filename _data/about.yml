@@ -20,9 +20,12 @@ stats:
   - value_key: publications_count
     suffix: "+"
     label: "Publications & Proceedings"
+    
   - value: "$12M"
     label: "ARPA-H Grant Co-authored"
+
   - value: "2"
     label: "Degrees in Robotics & ME"
+
   - value: "4+"
     label: "Years at Vanderbilt MEDLab"

@@ -80,14 +80,17 @@ title: Home
 </section>
 
 {% assign featured_pubs = site.data.publications | where: "featured", true %}
-{% if featured_pubs.size > 0 %}
+{% assign featured_highlights = site.data.highlights | where: "featured", true %}
+{% assign total_featured_slides = featured_pubs.size | plus: featured_highlights.size %}
+{% if total_featured_slides > 0 %}
 <!-- ══ FEATURED PUBLICATIONS ════════════════════════════════ -->
 <section id="featured-publications">
   <div class="container">
     <p class="section-label">Selected Work</p>
-    <h2 class="section-title">Featured Publications</h2>
+    <h2 class="section-title">Featured Publications &amp; Highlights</h2>
     <div class="section-divider"></div>
-    <div class="featured-pub-grid">
+    <div class="featured-pub-carousel" data-featured-carousel>
+      <div class="featured-pub-track" id="featured-pub-track">
       {% for pub in featured_pubs %}
       {% assign pdf_href = '' %}
       {% if pub.pdf and pub.pdf != '' %}
@@ -98,23 +101,58 @@ title: Home
         {% endif %}
       {% endif %}
       {% assign primary_link = pdf_href | default: pub.link_url | default: pub.doi %}
-      <article class="featured-pub-card" id="featured-{{ pub.key }}">
-        {% assign has_preview_image = false %}
-        {% if pub.featured_media_type == 'image' and pub.featured_media_url %}
-          {% assign has_preview_image = true %}
-        {% elsif pub.figure and pub.figure != '' %}
-          {% assign has_preview_image = true %}
-        {% endif %}
+      {% assign has_video_media = false %}
+      {% if pub.featured_media_type == 'video' and pub.featured_media_url %}
+        {% assign has_video_media = true %}
+      {% endif %}
+      {% assign has_image_preview = false %}
+      {% if pub.featured_media_type == 'image' and pub.featured_media_url %}
+        {% assign has_image_preview = true %}
+      {% elsif pub.figure and pub.figure != '' %}
+        {% assign has_image_preview = true %}
+      {% endif %}
+      {% assign show_video_in_preview = false %}
+      {% if has_video_media and has_image_preview == false %}
+        {% assign show_video_in_preview = true %}
+      {% endif %}
+      {% assign show_video_in_body = false %}
+      {% if has_video_media and has_image_preview %}
+        {% assign show_video_in_body = true %}
+      {% endif %}
+      {% assign has_right_preview = has_image_preview %}
+      {% if show_video_in_preview %}
+        {% assign has_right_preview = true %}
+      {% endif %}
 
-        <div class="featured-pub-top{% if has_preview_image %} has-image{% endif %}">
+      {% assign is_embed_video = false %}
+      {% if has_video_media %}
+        {% if pub.featured_media_url contains 'youtube.com/embed/' or pub.featured_media_url contains 'player.vimeo.com/video/' %}
+          {% assign is_embed_video = true %}
+        {% endif %}
+      {% endif %}
+
+      {% assign local_video_href = pub.featured_media_url %}
+      {% if has_video_media %}
+        {% unless pub.featured_media_url contains '://' %}
+          {% assign local_video_href = pub.featured_media_url | relative_url %}
+        {% endunless %}
+      {% endif %}
+
+      <div class="featured-pub-slide" data-featured-slide>
+      <article class="featured-pub-card" id="featured-{{ pub.key }}">
+        <div class="featured-pub-top{% if has_right_preview %} has-image{% endif %}">
           <div class="featured-pub-content">
             <div class="featured-pub-head">
               <span class="featured-pub-year">{{ pub.year }}</span>
               <span class="featured-pub-type">{{ pub.type }}</span>
             </div>
             <h3 class="featured-pub-title">{{ pub.title }}</h3>
-            <p class="featured-pub-authors">{{ pub.authors | replace_first: '**', '<strong>' | replace_first: '**', '</strong>' }}</p>
             <p class="featured-pub-venue">{{ pub.venue }}</p>
+            {% if pub.featured_blurb %}
+            <p class="featured-pub-summary exp-abstract">{{ pub.featured_blurb }}</p>
+            {% elsif pub.abstract %}
+            <p class="featured-pub-summary exp-abstract">{{ pub.abstract }}</p>
+            {% endif %}
 
             <button class="featured-pub-toggle featured-pub-toggle-top" type="button" aria-expanded="false">
               <span>See more</span>
@@ -125,9 +163,9 @@ title: Home
               <div class="featured-pub-media-wrap">
                 <div>
                   {% if pub.featured_blurb %}
-                  <p class="exp-abstract">{{ pub.featured_blurb }}</p>
+                  <p class="exp-abstract featured-pub-details-text">{{ pub.featured_blurb }}</p>
                   {% elsif pub.abstract %}
-                  <p class="exp-abstract">{{ pub.abstract }}</p>
+                  <p class="exp-abstract featured-pub-details-text">{{ pub.abstract }}</p>
                   {% endif %}
 
                   <div class="exp-links" style="margin-top:0.75rem">
@@ -138,17 +176,7 @@ title: Home
                   </div>
                 </div>
 
-                {% if pub.featured_media_type == 'video' and pub.featured_media_url %}
-                {% assign is_embed_video = false %}
-                {% if pub.featured_media_url contains 'youtube.com/embed/' or pub.featured_media_url contains 'player.vimeo.com/video/' %}
-                  {% assign is_embed_video = true %}
-                {% endif %}
-
-                {% assign local_video_href = pub.featured_media_url %}
-                {% unless pub.featured_media_url contains '://' %}
-                  {% assign local_video_href = pub.featured_media_url | relative_url %}
-                {% endunless %}
-
+                {% if show_video_in_body %}
                 <figure class="featured-pub-media">
                   {% if is_embed_video %}
                   <div class="video-wrap featured-video-wrap">
@@ -176,9 +204,25 @@ title: Home
             </div>
           </div>
 
-          {% if has_preview_image %}
+          {% if has_right_preview %}
           <figure class="featured-pub-preview">
-            {% if pub.featured_media_type == 'image' and pub.featured_media_url %}
+            {% if show_video_in_preview %}
+              {% if is_embed_video %}
+              <div class="video-wrap featured-video-wrap featured-preview-video-wrap">
+                <iframe
+                  src="{{ pub.featured_media_url }}"
+                  title="{{ pub.title }} media"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen>
+                </iframe>
+              </div>
+              {% else %}
+              <video class="featured-video-player featured-preview-video-player" controls preload="metadata">
+                <source src="{{ local_video_href }}">
+                Your browser does not support the video tag.
+              </video>
+              {% endif %}
+            {% elsif pub.featured_media_type == 'image' and pub.featured_media_url %}
               {% if pub.featured_media_url contains '://' %}
               <img src="{{ pub.featured_media_url }}" alt="{{ pub.title }}" />
               {% else %}
@@ -191,7 +235,82 @@ title: Home
           {% endif %}
         </div>
       </article>
+      </div>
       {% endfor %}
+
+      {% for h in featured_highlights %}
+      {% assign highlight_image_src = '' %}
+      {% if h.image and h.image != '' %}
+        {% if h.image contains '://' %}
+          {% assign highlight_image_src = h.image %}
+        {% elsif h.image contains '/' %}
+          {% assign highlight_image_src = h.image | relative_url %}
+        {% else %}
+          {% assign highlight_image_src = '/assets/images/' | append: h.image | relative_url %}
+        {% endif %}
+      {% endif %}
+      <div class="featured-pub-slide" data-featured-slide>
+        <article class="featured-pub-card featured-highlight-card" id="featured-highlight-{{ h.key }}">
+          <div class="featured-pub-top{% if highlight_image_src != '' %} has-image{% endif %}">
+            <div class="featured-pub-content">
+              <div class="featured-pub-head">
+                <span class="featured-pub-year">{{ h.date }}</span>
+                <span class="featured-pub-type">Highlight · {{ h.type }}</span>
+              </div>
+              <h3 class="featured-pub-title">{{ h.title }}</h3>
+              <p class="featured-pub-venue">{{ h.location }}</p>
+              <p class="exp-abstract">{{ h.body }}</p>
+            </div>
+
+            {% if highlight_image_src != '' %}
+            <figure class="featured-pub-preview featured-highlight-preview">
+              <img src="{{ highlight_image_src }}" alt="{{ h.title }}" />
+            </figure>
+            {% endif %}
+          </div>
+        </article>
+      </div>
+      {% endfor %}
+      </div>
+
+      {% if total_featured_slides > 1 %}
+      <div class="featured-pub-carousel-controls" aria-label="Featured publication navigation">
+        <button class="featured-pub-nav" type="button" data-featured-prev aria-label="Previous featured publication">
+          <span aria-hidden="true">&larr;</span>
+          <span>Previous</span>
+        </button>
+        <div class="featured-pub-dots" role="tablist" aria-label="Featured publication slides">
+          {% for pub in featured_pubs %}
+          <button
+            class="featured-pub-dot{% if forloop.first %} active{% endif %}"
+            type="button"
+            role="tab"
+            data-featured-dot
+            data-featured-index="{{ forloop.index0 }}"
+            aria-label="Go to featured publication {{ forloop.index }}"
+            aria-selected="{% if forloop.first %}true{% else %}false{% endif %}">
+          </button>
+          {% endfor %}
+          {% assign highlight_dot_offset = featured_pubs.size %}
+          {% for h in featured_highlights %}
+          {% assign highlight_dot_index = forloop.index0 | plus: highlight_dot_offset %}
+          <button
+            class="featured-pub-dot"
+            type="button"
+            role="tab"
+            data-featured-dot
+            data-featured-index="{{ highlight_dot_index }}"
+            aria-label="Go to featured highlight {{ forloop.index }}"
+            aria-selected="false">
+          </button>
+          {% endfor %}
+        </div>
+        <button class="featured-pub-nav" type="button" data-featured-next aria-label="Next featured publication">
+          <span>Next</span>
+          <span aria-hidden="true">&rarr;</span>
+        </button>
+      </div>
+      {% endif %}
     </div>
   </div>
 </section>

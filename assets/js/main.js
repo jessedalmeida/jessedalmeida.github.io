@@ -87,6 +87,93 @@ document.querySelectorAll('.featured-pub-card').forEach(card => {
   }
 });
 
+// ── Featured publications carousel ──
+const featuredCarousel = document.querySelector('[data-featured-carousel]');
+if (featuredCarousel) {
+  const featuredTrack = featuredCarousel.querySelector('#featured-pub-track');
+  const featuredSlides = Array.from(featuredCarousel.querySelectorAll('[data-featured-slide]'));
+  const featuredPrevButton = featuredCarousel.querySelector('[data-featured-prev]');
+  const featuredNextButton = featuredCarousel.querySelector('[data-featured-next]');
+  const featuredDots = Array.from(featuredCarousel.querySelectorAll('[data-featured-dot]'));
+  const FEATURED_AUTO_ADVANCE_MS = 6500;
+
+  if (featuredTrack && featuredSlides.length > 1) {
+    let activeFeaturedIndex = 0;
+    let autoplayTimer = null;
+
+    const updateFeaturedCarousel = targetIndex => {
+      const maxIndex = featuredSlides.length - 1;
+      activeFeaturedIndex = Math.max(0, Math.min(targetIndex, maxIndex));
+      featuredTrack.style.transform = `translateX(-${activeFeaturedIndex * 100}%)`;
+
+      featuredDots.forEach((dot, index) => {
+        const isActive = index === activeFeaturedIndex;
+        dot.classList.toggle('active', isActive);
+        dot.setAttribute('aria-selected', isActive ? 'true' : 'false');
+      });
+    };
+
+    const stopAutoplay = () => {
+      if (!autoplayTimer) return;
+      clearInterval(autoplayTimer);
+      autoplayTimer = null;
+    };
+
+    const startAutoplay = () => {
+      stopAutoplay();
+      autoplayTimer = setInterval(() => {
+        const nextIndex = activeFeaturedIndex === featuredSlides.length - 1 ? 0 : activeFeaturedIndex + 1;
+        updateFeaturedCarousel(nextIndex);
+      }, FEATURED_AUTO_ADVANCE_MS);
+    };
+
+    const goToPrev = () => {
+      const prevIndex = activeFeaturedIndex === 0 ? featuredSlides.length - 1 : activeFeaturedIndex - 1;
+      updateFeaturedCarousel(prevIndex);
+      startAutoplay();
+    };
+
+    const goToNext = () => {
+      const nextIndex = activeFeaturedIndex === featuredSlides.length - 1 ? 0 : activeFeaturedIndex + 1;
+      updateFeaturedCarousel(nextIndex);
+      startAutoplay();
+    };
+
+    if (featuredPrevButton) {
+      featuredPrevButton.addEventListener('click', goToPrev);
+    }
+
+    if (featuredNextButton) {
+      featuredNextButton.addEventListener('click', goToNext);
+    }
+
+    featuredDots.forEach(dot => {
+      dot.addEventListener('click', () => {
+        const target = Number(dot.getAttribute('data-featured-index'));
+        if (Number.isNaN(target)) return;
+        updateFeaturedCarousel(target);
+        startAutoplay();
+      });
+    });
+
+    featuredCarousel.addEventListener('mouseenter', stopAutoplay);
+    featuredCarousel.addEventListener('mouseleave', startAutoplay);
+    featuredCarousel.addEventListener('focusin', stopAutoplay);
+    featuredCarousel.addEventListener('focusout', startAutoplay);
+
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) {
+        stopAutoplay();
+      } else {
+        startAutoplay();
+      }
+    });
+
+    updateFeaturedCarousel(0);
+    startAutoplay();
+  }
+}
+
 // ── Publication filters + show more ──
 const publicationRows = Array.from(document.querySelectorAll('.pub-row'));
 const publicationFilterButtons = Array.from(document.querySelectorAll('.pub-filter-btn'));

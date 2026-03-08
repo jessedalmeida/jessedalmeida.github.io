@@ -107,6 +107,7 @@
   authors: "T. Watts, S. S. Stern, A. O. Chara, **J. F. d'Almeida**, A. Kuntz"
   venue: "ISMR 2026"
   doi: ""
+  pdf: "assets/papers/2026_ISMR_PushCVAE.pdf"
 
 - key: smith_ismr2026_resection
   year: "2026"
@@ -157,6 +158,7 @@
   authors: "A. Acar, M. Smith, L. Al-Zogbi, T. Watts, F. Li, H. Li, N. Yilmaz, P. M. Scheikl, **J. F. d'Almeida**, S. Sharma, L. Branscombe, T. E. Ertop, R. J. Webster III, I. Oguz, A. Kuntz, A. Krieger, J. Y. Wu"
   venue: "IROS 2025"
   doi: "https://ieeexplore.ieee.org/document/11246413/"
+  pdf: "assets/papers/2025_IROS_From_Monocular_Vision_to_Autonomous_Action__Guiding_Tumor_Resection_via_3D_Reconstruction.pdf"
   # Preprint: https://arxiv.org/abs/2503.16263
 
 - key: wilke_hamlyn2025_needlescopic
@@ -166,6 +168,7 @@
   authors: "E. Wilke, **J. F. d'Almeida**, I. J. Zamora, H. N. Lovvorn, and R. J. Webster III"
   venue: "Hamlyn Symposium on Medical Robotics 2025"
   doi: ""
+  pdf: "assets/papers/2025_Hamlyn_Needlescopic_Robot.pdf"
   # Not publicly indexed — add if proceedings are posted
 
 - key: wilke_ismr2025_uterine
@@ -175,6 +178,7 @@
   authors: "E. Wilke, S. E. Purdue, **J. F. d'Almeida**, L. Harvey, S. D. Herrell, and R. J. Webster III"
   venue: "ISMR 2025"
   doi: "https://ieeexplore.ieee.org/document/11025972/"
+  pdf: "assets/papers/2025_ISMR_Working_Sideways_with_Concentric_Tube_Robots__A_System_for_Natural_Orifice_Intrauterine_Surgeries.pdf"
 
 - key: dalmeida_ismr2025_prostate
   year: "2025"
@@ -183,6 +187,7 @@
   authors: "**J. F. d'Almeida**, J. A. Shrand, S. Garrow, C. E. Vaughn, N. L. Kavoussi, S. Setia, A. Reed, A. E. Ghazi, S. D. Herrell III, and R. J. Webster III"
   venue: "ISMR 2025"
   doi: "https://ieeexplore.ieee.org/document/11025965/"
+  pdf: "assets/papers/2025_ISMR_MRI_Guided_Transurethral_Robotic_Focal_Prostate_Resection.pdf"
 
 - key: li_spie2025_airway
   year: "2025"
