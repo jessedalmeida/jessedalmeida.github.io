@@ -17,26 +17,6 @@
 #    status     — active | completed
 # ═══════════════════════════════════════════════════════════════
 
-- key: transendoscopic_suturing
-  title: "Transendoscopic Robotic Suturing"
-  period: "Aug 2021 – Present"
-  tag: "Lead Project · 2021–Present"
-  status: active
-  summary: >
-    Developing a dual-arm handheld concentric tube robot system for Natural Orifice 
-    Transluminal Endoscopic Surgery (NOTES), enabling suturing in confined anatomical 
-    spaces without external incisions.
-  abstract: >
-    This project develops a dual-arm handheld concentric tube robot (CTR) system designed 
-    for transendoscopic suturing in Natural Orifice Transluminal Endoscopic Surgery (NOTES). 
-    The system is designed to pass through the working channel of a standard clinical 
-    endoscope, enabling minimally invasive repair of internal tissues — such as anastomotic 
-    leaks or prostatectomy closures — without external incisions. Key contributions include 
-    novel end-effector designs optimized for confined working spaces, kinematic modeling 
-    under tissue loading, and direct validation with surgeons on realistic surgical phantoms 
-    and biological tissue.
-  figure: ""   # e.g. "suturing_robot.jpg"
-
 - key: aliss
   title: "ALISS: Autonomy at a Less Invasive Scale"
   period: "May 2024 – Present"
@@ -58,10 +38,10 @@
 - key: fibroid_robot
   title: "Side-Firing Robot for Intrauterine Fibroid Removal"
   period: "Sept 2024 – Present"
-  tag: "Lead Researcher · 2024–Present"
+  tag: "Mentor · 2024–Present"
   status: active
   summary: >
-    Leading development of a continuum robot for resecting fibroids inside the uterus, 
+    Mentoring students in the development of a continuum robot for resecting fibroids inside the uterus, 
     modeling concentric tube robot kinematics at the superelastic limit for high-curvature arms.
   abstract: >
     Uterine fibroids are among the most common benign tumors in women, often requiring 
@@ -75,8 +55,8 @@
 
 - key: mri_prostate
   title: "MRI-Guided Focal Prostate Resection"
-  period: "2022 – Present"
-  tag: "Collaborative · 2022–Present"
+  period: "Sept 2022 – Present"
+  tag: "Researcher · 2022–2024 | Mentor · 2024–Present"
   status: active
   summary: >
     Contributing to a feasibility study for low-field MRI-guided transurethral robotic 
@@ -89,6 +69,27 @@
     demonstrated the feasibility of robot workspace coverage of clinically relevant 
     tumor locations.
   figure: ""
+
+- key: transendoscopic_suturing
+  title: "Transendoscopic Robotic Suturing"
+  period: "Aug 2021 – 2024"
+  tag: "Lead Project"
+  status: completed
+  summary: >
+    Developing a dual-arm handheld concentric tube robot system for Natural Orifice 
+    Transluminal Endoscopic Surgery (NOTES), enabling suturing in confined anatomical 
+    spaces without external incisions.
+  abstract: >
+    This project develops a dual-arm handheld concentric tube robot (CTR) system designed 
+    for transendoscopic suturing in Natural Orifice Transluminal Endoscopic Surgery (NOTES). 
+    The system is designed to pass through the working channel of a standard clinical 
+    endoscope, enabling minimally invasive repair of internal tissues — such as anastomotic 
+    leaks or prostatectomy closures — without external incisions. Key contributions include 
+    novel end-effector designs optimized for confined working spaces, kinematic modeling 
+    under tissue loading, and direct validation with surgeons on realistic surgical phantoms 
+    and biological tissue.
+  figure: ""   # e.g. "suturing_robot.jpg"
+
 
 - key: open_source_ctr
   title: "Open-Source 3D-Printed Concentric Tube Robot"
