@@ -20,15 +20,15 @@
 - key: aliss
   title: "ALISS: Autonomy at a Less Invasive Scale"
   period: "May 2024 – Present"
-  tag: "Vanderbilt MEDLab · 2024–Present"
+  tag: "Researcher · 2024–Present"
   status: active
   summary: >
     Collaborating on automation methods for suturing and hemostasis in minimally invasive 
     surgery. Co-authored the proposal for an ARPA-H award of up to $12 million.
   abstract: >
     ALISS (Autonomy at a Less Invasive Scale) is a multi-institutional effort funded by 
-    ARPA-H (up to $12M) focused on automating key surgical tasks — specifically suturing 
-    and hemostasis — in minimally invasive procedures. The goal is to enhance surgical 
+    ARPA-H (up to $12M) focused on automating key surgical tasks, specifically suturing 
+    and hemostasis, in minimally invasive procedures. The goal is to enhance surgical 
     accuracy and reduce procedure time through intelligent robotic assistance. Contributions 
     include co-authoring the initial ARPA-H proposal, collecting and organizing surgical 
     model datasets for machine learning training, and developing automation pipelines for 
@@ -48,32 +48,32 @@
     invasive hysterectomy or open myomectomy. This project develops a novel side-firing 
     continuum robot capable of navigating through a hysteroscope and resecting fibroid 
     tissue from within the uterine cavity. A key research challenge is modeling the 
-    kinematics of concentric tube robots operating at their superelastic limit — enabling 
+    kinematics of concentric tube robots operating at their superelastic limit, enabling 
     dramatically tighter curvatures than conventional designs and allowing the robot to 
     work perpendicular to the endoscope axis ("sideways").
   figure: ""
 
-- key: mri_prostate
-  title: "MRI-Guided Focal Prostate Resection"
-  period: "Sept 2022 – Present"
-  tag: "Researcher · 2022–2024 | Mentor · 2024–Present"
-  status: active
-  summary: >
-    Contributing to a feasibility study for low-field MRI-guided transurethral robotic 
-    focal prostate resection, bridging imaging and robotic intervention for precision oncology.
-  abstract: >
-    Focal therapy for prostate cancer requires precise targeting of tumor tissue while 
-    sparing surrounding healthy anatomy. This project investigates the feasibility of 
-    using low-field intraoperative MRI to guide a transurethral concentric tube robot 
-    for focal resection. Working with high-field pre-operative images as a proxy, we 
-    demonstrated the feasibility of robot workspace coverage of clinically relevant 
-    tumor locations.
-  figure: ""
+# - key: mri_prostate
+#   title: "MRI-Guided Focal Prostate Resection"
+#   period: "Sept 2022 – Present"
+#   tag: "Researcher · 2022–2024 | Mentor · 2024–Present"
+#   status: active
+#   summary: >
+#     Contributing to a feasibility study for low-field MRI-guided transurethral robotic 
+#     focal prostate resection, bridging imaging and robotic intervention for precision oncology.
+#   abstract: >
+#     Focal therapy for prostate cancer requires precise targeting of tumor tissue while 
+#     sparing surrounding healthy anatomy. This project investigates the feasibility of 
+#     using low-field intraoperative MRI to guide a transurethral concentric tube robot 
+#     for focal resection. Working with high-field pre-operative images as a proxy, we 
+#     demonstrated the feasibility of robot workspace coverage of clinically relevant 
+#     tumor locations.
+#   figure: ""
 
 - key: transendoscopic_suturing
   title: "Transendoscopic Robotic Suturing"
   period: "Aug 2021 – 2024"
-  tag: "Lead Project"
+  tag: "Project Lead · 2021–2024"
   status: completed
   summary: >
     Developing a dual-arm handheld concentric tube robot system for Natural Orifice 
@@ -84,48 +84,48 @@
     for transendoscopic suturing in Natural Orifice Transluminal Endoscopic Surgery (NOTES). 
     The system is designed to pass through the working channel of a standard clinical 
     endoscope, enabling minimally invasive repair of internal tissues — such as anastomotic 
-    leaks or prostatectomy closures — without external incisions. Key contributions include 
+    leaks or prostatectomy closures, without external incisions. Key contributions include 
     novel end-effector designs optimized for confined working spaces, kinematic modeling 
     under tissue loading, and direct validation with surgeons on realistic surgical phantoms 
     and biological tissue.
   figure: ""   # e.g. "suturing_robot.jpg"
 
 
-- key: open_source_ctr
-  title: "Open-Source 3D-Printed Concentric Tube Robot"
-  period: "Aug 2020 – May 2021"
-  tag: "MS Thesis · WPI 2021"
-  status: completed
-  summary: >
-    MS thesis creating an accessible concentric tube robot from 3D-printed and off-the-shelf 
-    materials, enabling broader educational adoption without expensive custom fabrication.
-  abstract: >
-    Concentric tube robots (CTRs) are powerful tools for minimally invasive surgery, but 
-    their fabrication traditionally requires specialized superelastic NiTi tubing and 
-    precision machining — limiting access for researchers and educators. This thesis 
-    investigates whether additive manufacturing (Multi Jet Fusion, FDM) can replicate the 
-    kinematic behavior of traditional NiTi CTRs. The result is an open-source CTR design 
-    made entirely from 3D-printed components and off-the-shelf materials, capable of 
-    actuating three precurved stages, validated against the standard Cosserat rod kinematic 
-    model.
-  figure: ""
+# - key: open_source_ctr
+#   title: "Open-Source 3D-Printed Concentric Tube Robot"
+#   period: "Aug 2020 – May 2021"
+#   tag: "MS Thesis · WPI 2021"
+#   status: completed
+#   summary: >
+#     MS thesis creating an accessible concentric tube robot from 3D-printed and off-the-shelf 
+#     materials, enabling broader educational adoption without expensive custom fabrication.
+#   abstract: >
+#     Concentric tube robots (CTRs) are powerful tools for minimally invasive surgery, but 
+#     their fabrication traditionally requires specialized superelastic NiTi tubing and 
+#     precision machining, limiting access for researchers and educators. This thesis 
+#     investigates whether additive manufacturing (Multi Jet Fusion, FDM) can replicate the 
+#     kinematic behavior of traditional NiTi CTRs. The result is an open-source CTR design 
+#     made entirely from 3D-printed components and off-the-shelf materials, capable of 
+#     actuating three precurved stages, validated against the standard Cosserat rod kinematic 
+#     model.
+#   figure: ""
 
-- key: steerable_laser
-  title: "Steerable Laser Fibers for Office-Based Laryngology"
-  period: "May 2019 – May 2021"
-  tag: "WPI Research · 2019–2021"
-  status: completed
-  summary: >
-    Developed simulation platforms and end-effector designs to steer a laser fiber through 
-    an endoscope into the larynx for treatment of pre-malignant vocal fold tumors. Awarded 
-    Best Student Paper at SPIE 2021.
-  abstract: >
-    Office-based laser surgery of the vocal folds offers a promising alternative to 
-    traditional operating room procedures for treating pre-malignant lesions. This work 
-    developed a simulation platform for evaluating steerable laser fiber designs within 
-    anatomical meshes of the larynx, quantifying reachable workspace and dosimetry coverage. 
-    A key finding was that angled fiber tip geometries significantly outperform flat-cleaved 
-    tips in targeting accuracy. The simulation framework was validated against an ex vivo 
-    laryngoscopic procedure model. This work received the Best Student Paper Award at SPIE 
-    Medical Imaging 2021.
-  figure: ""
+# - key: steerable_laser
+#   title: "Steerable Laser Fibers for Office-Based Laryngology"
+#   period: "May 2019 – May 2021"
+#   tag: "WPI Research · 2019–2021"
+#   status: completed
+#   summary: >
+#     Developed simulation platforms and end-effector designs to steer a laser fiber through 
+#     an endoscope into the larynx for treatment of pre-malignant vocal fold tumors. Awarded 
+#     Best Student Paper at SPIE 2021.
+#   abstract: >
+#     Office-based laser surgery of the vocal folds offers a promising alternative to 
+#     traditional operating room procedures for treating pre-malignant lesions. This work 
+#     developed a simulation platform for evaluating steerable laser fiber designs within 
+#     anatomical meshes of the larynx, quantifying reachable workspace and dosimetry coverage. 
+#     A key finding was that angled fiber tip geometries significantly outperform flat-cleaved 
+#     tips in targeting accuracy. The simulation framework was validated against an ex vivo 
+#     laryngoscopic procedure model. This work received the Best Student Paper Award at SPIE 
+#     Medical Imaging 2021.
+#   figure: ""
