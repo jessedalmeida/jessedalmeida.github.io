@@ -29,13 +29,20 @@
 # ═══════════════════════════════════════════════════════════════
 
 # ── JOURNAL PAPERS ────────────────────────────────────────────
-# - key: dalmeida_ral_pinpoint_2026
-#   year: "2026"
-#   type: journal
-#   title: "PinPoint: Monocular Needle Pose Estimation for Robotic Suturing via Stein Variational Newton and Geometric Residuals"
-#   authors: "**J. F. d'Almeida**, T. Watts, S. S. Stern, J. Ferguson, A. Kuntz, R. J. Webster III"
-#   venue: "IEEE Robotics and Automation Letters (RA-L)"
-#   doi: ""
+- key: dalmeida_pinpoint_2026
+  year: "2026"
+  type: journal
+  title: "PinPoint: Monocular Needle Pose Estimation for Robotic Suturing via Stein Variational Newton and Geometric Residuals"
+  authors: "**J. F. d'Almeida**, T. Watts, S. S. Stern, J. Ferguson, A. Kuntz, R. J. Webster III"
+  venue: "ArXiv preprint"
+  doi: "https://arxiv.org/abs/2603.23365"
+  pdf: "assets/papers/2026_RA_L__ALISS_Suture_Needle_Pose_Estimation-arXiv.pdf"
+  featured: true
+  featured_blurb: >
+    We present PinPoint, a novel method for monocular needle pose estimation in robotic suturing
+    using Stein Variational Newton and geometric residuals, demonstrating improved accuracy and robustness in challenging surgical environments.
+  featured_media_type: video
+  featured_media_url: "assets/videos/dalmeida_pinpoint2026_demo.mp4"
   # No preprint found yet — add when available
 
 - key: dalmeida_jmrr_2025
@@ -46,7 +53,6 @@
   venue: "Journal of Medical Robotics Research (JMRR)"
   doi: "https://pmc.ncbi.nlm.nih.gov/articles/PMC12889886/"
   pdf: "assets/papers/2025_JMRR_MRI_Robotic_Focal_Prostate_Resection.pdf"
-  # Full DOI not yet indexed; PMC link works
 
 - key: dalmeida_jendo_2025
   year: "2025"
