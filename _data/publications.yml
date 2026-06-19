@@ -83,13 +83,22 @@
 #   doi: ""
   # Under review — add when accepted/published
 
-# - key: minor_hamlyn2026_threading
-#   year: "2026"
-#   type: conference
-#   title: "Threading the Robot: Trans-Concentric-Tube-Robot Delivery of Flexible Suturing Needles"
-#   authors: "B. Minor, **J. F. d'Almeida**, S. S. Stern, and R. J. Webster III"
-#   venue: "Hamlyn 2026"
-#   doi: ""
+- key: dalmeida_iros2026_handoff
+  year: "2026"
+  type: conference
+  title: "Uncertainty-Aware Needle Handoff for Autonomous Endoscopic Suturing with Concentric Tube Robots"
+  authors: " **J. F. d'Almeida**, S. S. Stern, Alan Kuntz, and R. J. Webster III"
+  venue: "IROS 2026"
+  doi: ""
+  notes: "In Press."
+
+- key: minor_hamlyn2026_threading
+  year: "2026"
+  type: conference
+  title: "Threading the Robot: Trans-Concentric-Tube-Robot Delivery of Flexible Suturing Needles"
+  authors: "B. Minor, **J. F. d'Almeida**, S. S. Stern, and R. J. Webster III"
+  venue: "Hamlyn 2026"
+  doi: ""
 
 - key: dalmeida_ismr2026_suturing
   year: "2026"
